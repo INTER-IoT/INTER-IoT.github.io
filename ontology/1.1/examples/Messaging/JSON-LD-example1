@@ -1,0 +1,126 @@
+{
+  "@context": {
+    "DUL": "http://www.loa-cnr.it/ontologies/DUL.owl#",
+    "aws": "http://purl.oclc.org/NET/ssnx/meteo/aws#",
+    "cf-feature": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#",
+    "cf-property": "http://purl.oclc.org/NET/ssnx/cf/cf-property#",
+    "lgd": "http://linkedgeodata.org/property/",
+    "lsm": "http://lsm.deri.ie/ont/lsm.owl#",
+    "phenonet": "http://sensordb.csiro.au/ontology/phenonet#",
+    "prov": "http://purl.org/net/provenance/ns#",
+    "qu": "http://purl.oclc.org/NET/ssnx/qu/qu#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rr": "http://www.w3.org/ns/r2rml#",
+    "ssn": "http://purl.oclc.org/NET/ssnx/ssn#",
+    "unit": "http://purl.oclc.org/NET/ssnx/qu/unit#",
+    "wgs84": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "InterIoTMsg": "http://inter-iot.eu/message/"
+  },
+  "InterIoTMsg:metadata": {
+	  	"InterIoTMsg:convId": 1,
+	  	"InterIoTMsg:platform": {
+	  		"@id": "http://g"
+	  	},
+	  	"InterIoTMsg:property": "prop value"
+  },
+  "@graph": [
+    {
+      "@id": "aws:air_temperature",
+      "qu:unit": {
+        "@id": "phenonet:degreeCelsius"
+      },
+      "rr:columnName": "temperature"
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/country1",
+      "rdfs:label": "country"
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/sensor/5010",
+      "@type": [
+        "aws:CapacitiveBead",
+        "ssn:Sensor"
+      ],
+      "DUL:hasLocation": {
+        "@id": "http://sensordb.csiro.au/id/place/location1"
+      },
+      "lsm:hasSensorType": {
+        "@id": "http://sensordb.csiro.au/id/sensorType1"
+      },
+      "lsm:hasSourceType": "SourceType",
+      "phenonet:hasSerialNumber": {
+        "@id": "http://sensordb.csiro.au/id/sensor/5010/serial/serial2"
+      },
+      "prov:PerformedBy": "SensorSource",
+      "rdfs:label": "Sensor 5010",
+      "ssn:hasMeasurementProperty": {
+        "@id": "http://sensordb.csiro.au/id/sensor/5010/accuracy/acc_1"
+      },
+      "ssn:observes": {
+        "@id": "aws:air_temperature"
+      },
+      "ssn:ofFeature": {
+        "@id": "http://sensordb.csiro.au/id/site/narrabri/sf/sf_narrabri"
+      },
+      "ssn:onPlatform": {
+        "@id": "http://sensordb.csiro.au/id/site/narrabri/Pweather"
+      }
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/site/narrabri/Pweather",
+      "@type": "ssn:Platform",
+      "ssn:inDeployment": {
+        "@id": "http://sensordb.csiro.au/id/site/narrabri/deployment/2013"
+      }
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/place/location1",
+      "@type": "DUL:Place",
+      "lgd:is_in_continent": {
+        "@id": "http://sensordb.csiro.au/id/conti"
+      },
+      "lgd:is_in_country": {
+        "@id": "http://sensordb.csiro.au/id/country1"
+      },
+      "lgd:is_in_province": {
+        "@id": "http://sensordb.csiro.au/id/prov1"
+      },
+      "lsm:is_in_city": {
+        "@id": "http://sensordb.csiro.au/id/city1"
+      },
+      "wgs84:lat": {
+        "@type": "xsd:decimal",
+        "@value": "52.3"
+      },
+      "wgs84:long": {
+        "@type": "xsd:decimal",
+        "@value": "98.2"
+      }
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/prov1",
+      "rdfs:label": "province"
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/conti",
+      "rdfs:label": "conti"
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/site/narrabri/sf/sf_narrabri",
+      "@type": "phenonet:SamplingFeature",
+      "ssn:ofFeature": {
+        "@id": "cf-feature:atmosphere_air"
+      }
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/sensorType1",
+      "rdfs:label": "TypeName"
+    },
+    {
+      "@id": "http://sensordb.csiro.au/id/city1",
+      "rdfs:label": "cityname"
+    }
+  ]
+}

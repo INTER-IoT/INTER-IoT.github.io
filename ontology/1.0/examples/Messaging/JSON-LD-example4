@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "smart-knife": "http://purl.oclc.org/NET/ssnx/product/smart-knife#",
+    "ssn": "http://purl.oclc.org/NET/ssnx/ssn#",
+    "ucum": "http://purl.oclc.org/NET/muo/ucum/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+   "InterIoTMsg:metadata": {
+	  	"InterIoTMsg:convId": 2,
+	  	"InterIoTMsg:platform": {
+	  		"@id": "http://p1"
+	  	},
+	  	"InterIoTMsg:MessageType": "SENSOR_DATA"
+  },
+  "@graph": [
+    {
+      "@id": "smart-knife:ZAxisAccelerationMeasurementValue",
+      "@type": [
+        "owl:Thing",
+        "smart-knife:AccelerationValue"
+      ],
+      "smart-knife:hasQuantityValue": {
+        "@type": "xsd:float",
+        "@value": "0.98"
+      }
+    },
+    {
+      "@id": "smart-knife:KnifeSensorOutput_2355676",
+      "@type": [
+        "smart-knife:AccelerationSensorOutput",
+        "owl:Thing"
+      ],
+      "ssn:hasValue": {
+        "@id": "smart-knife:ZAxisAccelerationMeasurementValue"
+      },
+      "ssn:isProducedBy": {
+        "@id": "smart-knife:ExampleWiTilt30Accelerometer"
+      }
+    },
+    {
+      "@id": "smart-knife:KnifeCuttingObservation_435782677",
+      "@type": [
+        "owl:Thing",
+        "smart-knife:AccelerationObservation"
+      ],
+      "ssn:featureOfInterest": {
+        "@id": "smart-knife:Knife_123"
+      },
+      "ssn:observationResult": {
+        "@id": "smart-knife:KnifeSensorOutput_2355676"
+      },
+      "ssn:observedBy": {
+        "@id": "smart-knife:ExampleWiTilt30Accelerometer"
+      },
+      "ssn:observedProperty": {
+        "@id": "http://purl.oclc.org/NET/muo/ucum#physical-quality/acceleration"
+      }
+    }
+  ]
+}

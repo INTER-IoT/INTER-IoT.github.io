@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY ssn "http://purl.oclc.org/NET/ssnx/ssn#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY ucum "http://purl.oclc.org/NET/muo/ucum/">
+]>
+<rdf:RDF xmlns:smart-knife="http://purl.oclc.org/NET/ssnx/product/smart-knife#" 
+xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#" 
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+xmlns:owl="http://www.w3.org/2002/07/owl#" 
+xmlns:ucum="http://purl.oclc.org/NET/muo/ucum/">
+
+<!-- sensor attached to a knife -->
+<owl:Thing rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#ExampleWiTilt30Accelerometer">
+ <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30Accelerometer"/>
+ <ssn:hasMeasurementCapability rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#ExampleWiTiltAccelerometerMeasurementCapability"/>
+ <ssn:onPlatform rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#Knife_123"/>
+</owl:Thing>
+
+<ssn:FeatureOfInterest rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#Knife_123">
+	<rdf:type rdf:resource="&ssn;Platform"/>
+	<rdfs:comment>An example knife with an attached WiTilt 3.0 accelerometer. It belongs to both ssn:Platform and ssn:Feature because it is both the platform of the sensor and the feature being observed by the sensor.</rdfs:comment>
+</ssn:FeatureOfInterest>
+
+<owl:Thing rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#ExampleWiTiltAccelerometerMeasurementCapability">
+	<rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30AccelerationMeasurementCapability"/>
+	<rdfs:comment>Measurement capabilities of our example sensor. It is set to the &quot;binary&quot; mode where the frequency is 610 Hz and measures acceleration in the range of +/- 1.5g.</rdfs:comment>
+	<ssn:hasMeasurementProperty rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30BinaryModeFrequency"/>
+	<ssn:hasMeasurementProperty rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30MeasurementRange_1"/>
+</owl:Thing>
+
+<smart-knife:WiTilt30MeasurementFrequency rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30BinaryModeFrequency">
+	<rdf:type rdf:resource="&owl;Thing"/>
+	<smart-knife:hasMeasurementPropertyValue rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30BinaryModeFrequencyValue"/>
+</smart-knife:WiTilt30MeasurementFrequency>
+
+<owl:Thing rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30BinaryModeFrequencyValue">
+	<rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#FrequencyValue"/>
+	<smart-knife:hasQuantityValue rdf:datatype="&xsd;float">610</smart-knife:hasQuantityValue>
+</owl:Thing>
+
+<owl:Thing rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30MeasurementRange_1">
+	<rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30MeasurementRange"/>
+	<rdfs:comment rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#Knife_123"/>
+	<smart-knife:hasMeasurementPropertyMaxValue rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30MeasurementRange_1MaxValue"/>
+	<smart-knife:hasMeasurementPropertyMinValue rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30MeasurementRange_1MinValue"/>
+</owl:Thing>
+
+<owl:Thing rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30MeasurementRange_1MaxValue">
+	<rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#AccelerationValue"/>
+	<smart-knife:hasQuantityValue rdf:datatype="&xsd;float">1.5</smart-knife:hasQuantityValue>
+</owl:Thing>
+
+<owl:Thing rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#WiTilt30MeasurementRange_1MinValue">
+	<rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#AccelerationValue"/>
+	<smart-knife:hasQuantityValue rdf:datatype="&xsd;float">-1.5</smart-knife:hasQuantityValue>
+</owl:Thing>
+
+</rdf:RDF>

@@ -1,0 +1,55 @@
+{
+	"prefixes":
+		[
+			{
+				"name": "GOIoTP",
+				"prefix": "iiot",
+				"uri": "http://inter-iot.eu/GOIoTP#"
+			},
+			{
+				"name": "GOIoTPex",
+				"prefix": "iiotex",
+				"uri": "http://inter-iot.eu/GOIoTPex#"
+			}
+		],
+	"entities":
+		[
+			{
+				"name": "IoTDevice",
+				"type": "Class",
+				"uri": "http://inter-iot.eu/GOIoTP#IoTDevice",
+				"ontologyUri": "http://inter-iot.eu/GOIoTP#",
+				"ttl": "xxx",
+				"labels": [{"lang": "en", "annotation": "IoT Device"}, {"lang": "de", "annotation": "IoT Gerät"}],
+				"comments": [{"lang": "en", "annotation": "IoT Device comment"}, {"lang": "en", "annotation": "IoT Device comment 2"}],
+				"SubclassOf": "",
+				"manRestrictions": "",
+				"examples": [{"lang": "en", "example": "IoT Device example"}]
+			},
+			{
+				"name": "SomeProp",
+				"type": "Object Property",
+				"uri": "http://inter-iot.eu/GOIoTP#SomeProp",
+				"ontologyUri": "http://inter-iot.eu/GOIoTP#",
+				"ttl": "xxx",
+				"labels": [{"lang": "en", "annotation": "SomeProp"}],
+				"comments": [{"lang": "en", "annotation": "SomeProp comment"}],
+				"SubpropertyOf": "",
+				"Domain": "",
+				"Range": "",
+				"InversePropertyOf": "",
+				"examples": [{"lang": "en", "example": "IoT Device example"}]
+			},
+			{
+				"name": "kilogram",
+				"type": "Individual",
+				"uri": "http://inter-iot.eu/GOIoTPex#kilogram",
+				"ontologyUri": "http://inter-iot.eu/GOIoTPex#",
+				"ttl": "xxx",
+				"labels": [{"lang": "en", "annotation": "Kilogram"}],
+				"comments": [{"lang": "en", "annotation": "Kilogram comment"}],
+				"manTypes": "",
+				"annotations": [{"prop": "sweet_units:hasPrefix", "value": "sweet_units:kilo"}],
+			}
+		]
+}

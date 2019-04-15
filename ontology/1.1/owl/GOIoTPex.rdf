@@ -1,0 +1,2657 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://inter-iot.eu/GOIoTPex#"
+     xml:base="http://inter-iot.eu/GOIoTPex"
+     xmlns:schema="http://schema.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:gml="http://www.opengis.net/ont/gml#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:ogc="http://www.opengis.net/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oldssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:iiotex="http://inter-iot.eu/GOIoTPex#"
+     xmlns:sf="http://www.opengis.net/ont/sf#"
+     xmlns:sweet_screla="http://sweet.jpl.nasa.gov/2.3/relaSci.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:sweet_mrela="http://sweet.jpl.nasa.gov/2.3/relaMath.owl#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:sweet_oper="http://sweet.jpl.nasa.gov/2.3/reprMathOperation.owl#"
+     xmlns:voaf="http://purl.org/vocommons/voaf#"
+     xmlns:sweet_units="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#"
+     xmlns:geosparqlf="http://www.opengis.net/def/function/geosparql/"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+     xmlns:iiot="http://inter-iot.eu/GOIoTP#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:geosparqlr="http://www.opengis.net/def/rule/geosparql/"
+     xmlns:sweet_repr="http://sweet.jpl.nasa.gov/2.3/repr.owl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://inter-iot.eu/GOIoTPex#">
+        <owl:versionIRI rdf:resource="http://inter-iot.eu/GOIoTPex#/1.1"/>
+        <owl:imports rdf:resource="http://inter-iot.eu/GOIoTP#"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.1</owl:versionInfo>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-05-10</dcterms:issued>
+        <rdfs:comment xml:lang="en">INTER-IoT. Interoperability of IoT Platforms.
+ 
+INTER-IoT is a R&amp;D project which has received funding from the European Union&apos;s Horizon 2020 research and innovation programme under grant agreement No 687283.
+
+Copyright (C) 2016-2018, by (Author&apos;s company of this file):
+  - Systems Research Institute Polish Academy of Sciences
+  
+ For more information, contact:
+  - author pawel.szmeja@ibspan.waw.pl
+  - Project coordinator:  coordinator@inter-iot.eu</rdfs:comment>
+        <dc:description xml:lang="en">Generic Ontology for IoT Platforms Extended (GOIoTPex) is an extension, and a vertical module that imports the GOIoTP ontology, both developed as part of the INTER-IoT project. GOIoTPex extends and &quot;fills&quot; select stub classes from GOIoTP with more specific classes, properties and individuals.
+
+The ontology extends the following GOIoTP modules:
+    Platform - software platforms that host IoT devices
+    Units &amp; measurements - systems of units and values
+    User - human or software that uses, or is a client of IoT entities
+    Service - web services offered by software
+
+For more information, please refer to INTER-IoT deliverables (specifically D4.2) and GOIoTP documentation available online.</dc:description>
+        <dc:creator>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                <foaf:name>Paweł Szmeja</foaf:name>
+            </rdf:Description>
+        </dc:creator>
+        <rdfs:comment xml:lang="en">Version 1.1:
+    Updated version number to match GOIoTP
+
+Version 1.0:
+    Initial release</rdfs:comment>
+        <rdfs:comment>This ontology extends GOIoTP with terms required in the concrete instantiation in the INTER-IoT project.</rdfs:comment>
+        <dcterms:modified>2018-03-08</dcterms:modified>
+        <rdfs:comment xml:lang="en">Current modules include: Platform, Units and Measurements, User</rdfs:comment>
+        <vann:preferredNamespaceUri>http://inter-iot.eu/GOIoTPex#</vann:preferredNamespaceUri>
+        <vann:preferredNamespacePrefix>iiotex</vann:preferredNamespacePrefix>
+        <dc:title xml:lang="en">Generic Ontology for IoT Platforms - Extended</dc:title>
+        <vs:term_status xml:lang="en">stable</vs:term_status>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasOperand -->
+
+    <owl:AnnotationProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasOperand"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasScalingNumber -->
+
+    <owl:AnnotationProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasScalingNumber"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasShiftingNumber -->
+
+    <owl:AnnotationProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasShiftingNumber"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaMath.owl#toThePower -->
+
+    <owl:AnnotationProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaMath.owl#toThePower"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasBaseUnit -->
+
+    <owl:AnnotationProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasBaseUnit"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasNumericValue -->
+
+    <owl:AnnotationProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasNumericValue"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasPrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasPrefix"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasSymbol -->
+
+    <owl:AnnotationProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaSci.owl#hasSymbol"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#hasAuthenticationData -->
+
+    <owl:ObjectProperty rdf:about="http://inter-iot.eu/GOIoTPex#hasAuthenticationData">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://inter-iot.eu/GOIoTPex#AuthenticationData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasScale -->
+
+    <owl:ObjectProperty rdf:about="http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasScale"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#hasLocalID -->
+
+    <owl:DatatypeProperty rdf:about="http://inter-iot.eu/GOIoTPex#hasLocalID">
+        <rdfs:comment xml:lang="en">A value used to identify an entity locally, i.e. within a scope of an IoT artifact, e.g. a platform. Whether this identifier is unique, and what is its format depends on the IoT artifact that manages the identifier system, to which this loacl ID belongs.
+
+The local ID should not be used to uniquely identify entities in an IoT ecosystem that manages multiple platforms, each with its own, independent, ID system.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTP#IoTDevice -->
+
+    <rdf:Description rdf:about="http://inter-iot.eu/GOIoTP#IoTDevice">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://inter-iot.eu/GOIoTPex#hasLocalID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTP#Middleware -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTP#Middleware"/>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTP#User -->
+
+    <rdf:Description rdf:about="http://inter-iot.eu/GOIoTP#User">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://inter-iot.eu/GOIoTPex#hasAuthenticationData"/>
+                <owl:someValuesFrom rdf:resource="http://inter-iot.eu/GOIoTPex#AuthenticationData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://inter-iot.eu/GOIoTPex#hasLocalID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#AbsorbedDoseRate -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#AbsorbedDoseRate">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Acceleration -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Acceleration">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ActivityOfRadionuclide -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ActivityOfRadionuclide">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#AmountOfSubstance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#AmountOfSubstance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIBaseMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#AmountOfSubstanceConcentration -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#AmountOfSubstanceConcentration">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#AngularAcceleration -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#AngularAcceleration">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#AngularVelocity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#AngularVelocity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Area -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Area">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#AuthenticationData -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#AuthenticationData">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Azure -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Azure">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#Middleware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#CEPWebService -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#CEPWebService">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#WebService"/>
+        <rdfs:comment xml:lang="en">Complex Event Processing Service.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Capacitance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Capacitance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#CatalyticActivity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#CatalyticActivity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#CatalyticActivityConcentration -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#CatalyticActivityConcentration">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#CurrentDensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#CurrentDensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Depth -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Depth">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Distance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Distance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIBaseMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#DoseEquivalent -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#DoseEquivalent">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#DynamicViscosity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#DynamicViscosity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#EclipseOM2M -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#EclipseOM2M">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#Middleware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ElectricCharge -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ElectricCharge">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ElectricChargeDensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ElectricChargeDensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ElectricCurrent -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ElectricCurrent">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIBaseMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ElectricFieldStrength -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ElectricFieldStrength">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ElectricFluxDensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ElectricFluxDensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ElectricPotentialDifference -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ElectricPotentialDifference">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ElectricResistance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ElectricResistance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Electricconductance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Electricconductance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Energy -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Energy">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#EnergyDensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#EnergyDensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#FIWARE -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#FIWARE">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#Middleware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Force -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Force">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Frequency -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Frequency">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#HeatCapacity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#HeatCapacity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#HeatFluxDensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#HeatFluxDensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Height -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Height">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Illuminance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Illuminance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Inductance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Inductance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#JSON -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#JSON">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#JSON-LD -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#JSON-LD">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#JSON"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Kerma -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Kerma">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Length -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Length">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Luminance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Luminance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#LuminousFlux -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#LuminousFlux">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#LuminousIntensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#LuminousIntensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIBaseMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#MagneticFieldStrength -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#MagneticFieldStrength">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#MagneticFlux -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#MagneticFlux">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#MagneticFluxDensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#MagneticFluxDensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Mass -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Mass">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIBaseMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#MassDensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#MassDensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#MassFraction -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#MassFraction">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#MolarEnergy -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#MolarEnergy">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#MolarEntropy -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#MolarEntropy">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#MomentOfForce -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#MomentOfForce">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#OneM2M -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#OneM2M">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#Middleware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#OpenIoT -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#OpenIoT">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#Middleware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Permeability -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Permeability">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Permittivity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Permittivity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#PlaneAngle -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#PlaneAngle">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Power -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Power">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Pressure -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Pressure">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#RDF -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#RDF">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#REST -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#REST">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#ServiceInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Radiance -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Radiance">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#RadiantIntensity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#RadiantIntensity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#RayExposure -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#RayExposure">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SIBaseMK -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SIBaseMK">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#MeasurementKind"/>
+        <rdfs:comment xml:lang="en">Class of basic SI measurement kinds.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The SI is founded on seven SI base units for seven base quantities assumed to be mutually independent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SIDerivedMK -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SIDerivedMK">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#MeasurementKind"/>
+        <rdfs:comment xml:lang="en">Class of derived SI measurement kinds.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Quantities other than base, called derived quantities, are defined in terms of the seven base quantities via a system of quantity equations. The SI derived units for these derived quantities are obtained from these equations and the seven SI base units.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#MeasurementKind"/>
+        <rdfs:comment xml:lang="en">SI derived units whose names and symbols include SI derived units with special names and symbols.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The special names and symbols of the 22 SI derived units with special names and symbols may themselves be included in the names and symbols of other SI derived units.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#MeasurementKind"/>
+        <rdfs:comment xml:lang="en">For ease of understanding and convenience, 22 SI derived units have been given special names and symbols.</rdfs:comment>
+        <rdfs:comment xml:lang="en">SI derived units with special names and symbols.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SOAP -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SOAP">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#ServiceInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SolidAngle -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SolidAngle">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SpecificEnergy -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SpecificEnergy">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SpecificHeatCapacity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SpecificHeatCapacity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SpecificVolume -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SpecificVolume">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#SurfaceTension -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#SurfaceTension">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Temperature -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Temperature">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIBaseMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#ThermalConductivity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#ThermalConductivity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedSpecialInclusiveMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Time -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Time">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIBaseMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#UniversAAL -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#UniversAAL">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#Middleware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Velocity -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Velocity">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Volume -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Volume">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#WSO2 -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#WSO2">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#Middleware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#WaveNumber -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#WaveNumber">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#SIDerivedMK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#WebService -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#WebService">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#Width -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#Width">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTPex#Distance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#XML -->
+
+    <owl:Class rdf:about="http://inter-iot.eu/GOIoTPex#XML">
+        <rdfs:subClassOf rdf:resource="http://inter-iot.eu/GOIoTP#DataFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/repr.owl#LogarithmicScale -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/repr.owl#LogarithmicScale"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/repr.owl#Measurement -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/repr.owl#Measurement"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprMathOperation.owl#Product -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprMathOperation.owl#Product"/>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit"/>
+        <owl:disjointWith rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ComplexUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ComplexUnit -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ComplexUnit">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#LogarithmicUnit -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#LogarithmicUnit">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://sweet.jpl.nasa.gov/2.3/relaMath.owl#hasScale"/>
+                <owl:allValuesFrom rdf:resource="http://sweet.jpl.nasa.gov/2.3/repr.owl#LogarithmicScale"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/repr.owl#Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/repr.owl#Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprMathOperation.owl#Product"/>
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ComplexUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ComplexUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ComplexUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByShifting -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByShifting">
+        <rdfs:subClassOf rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ComplexUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#NGSIv1JSON -->
+
+    <owl:NamedIndividual rdf:about="http://inter-iot.eu/GOIoTPex#NGSIv1JSON">
+        <rdf:type rdf:resource="http://inter-iot.eu/GOIoTPex#JSON"/>
+        <rdfs:comment xml:lang="en">A Java Script Object Notation format compliant with FIWARE NGSI (Next Generation Service Interface) version 1.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#NGSIv2JSON -->
+
+    <owl:NamedIndividual rdf:about="http://inter-iot.eu/GOIoTPex#NGSIv2JSON">
+        <rdf:type rdf:resource="http://inter-iot.eu/GOIoTPex#JSON"/>
+        <rdfs:comment xml:lang="en">A Java Script Object Notation format compliant with FIWARE NGSI (Next Generation Service Interface) version 2.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#genericJSON -->
+
+    <owl:NamedIndividual rdf:about="http://inter-iot.eu/GOIoTPex#genericJSON">
+        <rdf:type rdf:resource="http://inter-iot.eu/GOIoTPex#JSON"/>
+        <rdfs:comment xml:lang="en">A Java Script Object Notation format.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#genericJSON-LD -->
+
+    <owl:NamedIndividual rdf:about="http://inter-iot.eu/GOIoTPex#genericJSON-LD">
+        <rdf:type rdf:resource="http://inter-iot.eu/GOIoTPex#JSON-LD"/>
+        <rdfs:comment xml:lang="en">A Java Script Object Notation for Linked Data format.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#genericRDF -->
+
+    <owl:NamedIndividual rdf:about="http://inter-iot.eu/GOIoTPex#genericRDF">
+        <rdf:type rdf:resource="http://inter-iot.eu/GOIoTPex#RDF"/>
+        <rdfs:comment xml:lang="en">A Resource Description Framework format.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#genericXML -->
+
+    <owl:NamedIndividual rdf:about="http://inter-iot.eu/GOIoTPex#genericXML">
+        <rdf:type rdf:resource="http://inter-iot.eu/GOIoTPex#XML"/>
+        <rdfs:comment xml:lang="en">An Extensible Markup Language format.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://inter-iot.eu/GOIoTPex#iiotJSON -->
+
+    <owl:NamedIndividual rdf:about="http://inter-iot.eu/GOIoTPex#iiotJSON">
+        <rdf:type rdf:resource="http://inter-iot.eu/GOIoTPex#JSON-LD"/>
+        <rdfs:comment xml:lang="en">A Java Script Object Notation for Linked Data format compliant with INTER-IoT JSON-LD definition.
+
+iiotJSON is used in INTER-MW and IPSM components of INTER-IoT.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FNU -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FNU">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit"/>
+        <owl:sameAs rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FTU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FTU -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FTU">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit"/>
+        <owl:sameAs rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FormazinTurbidityUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FormazinTurbidityUnit -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#FormazinTurbidityUnit">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#MHz -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#MHz">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <owl:sameAs rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#megahertz"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#MYA -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#MYA">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#year"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#amperePerMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#amperePerMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#amperePerMeterSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#amperePerMeterSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampereSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampereSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#arcminute -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#arcminute">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.909E-4</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#arcsecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#arcsecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4.848E-6</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candela -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candela">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cd</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candelaPerMeterSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candelaPerMeterSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candela"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#centi -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#centi">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.01</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#centimeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#centimeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.01</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#centi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#century -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#century">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.1556926E9</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulomb -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulomb">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulomb"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombPerMeterCubed -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombPerMeterCubed">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulomb"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterCubed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombPerMeterSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulombPerMeterSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulomb"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#day -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#day">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">86400.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#db -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#db">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#LogarithmicUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#deca -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#deca">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">da</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#decade -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#decade">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.1556926E8</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degreeC -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degreeC">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByShifting"/>
+        <sweet_mrela:hasShiftingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-273.0</sweet_mrela:hasShiftingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvin"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degreeF -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degreeF">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByShifting"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.8</sweet_mrela:hasScalingNumber>
+        <sweet_mrela:hasShiftingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">32.0</sweet_mrela:hasShiftingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degreeC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degrees -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#degrees">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">57.2957795</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#dimensionlessUnit -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#dimensionlessUnit">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#exa -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#exa">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E18</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#farad -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#farad">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#coulomb"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perVolt"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#faradPerMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#faradPerMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#farad"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#giga -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#giga">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E9</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#gigahertz -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#gigahertz">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E9</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hertz"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#giga"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hecto -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hecto">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">h</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#henry -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#henry">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpereSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#henryPerMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#henryPerMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#henry"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hertz -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hertz">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <owl:sameAs rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hour -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hour">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3600.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKilogram -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKilogram">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKilogramPerKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerKilogramPerKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMeterCubedPerKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMeterCubedPerKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterCubed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMeterSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMeterSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMolePerKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerMolePerKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerTesla -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joulePerTesla">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perTesla"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#jouleSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#jouleSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvinPerMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvinPerMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvin"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilo -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilo">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000.0</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">k</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kg</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramMeterPerSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramMeterPerSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramPerMeterCubed -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramPerMeterCubed">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterCubed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramPerMeterSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramPerMeterSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramRadianPerSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogramRadianPerSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilohertz -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilohertz">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hertz"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilometer -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilometer">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilometerPerHour -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilometerPerHour">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.27777777</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#lumen -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#lumen">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candela"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#steradian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#lux -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#lux">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candela"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#lumen"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lx</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mega -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mega">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000000.0</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#megahertz -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#megahertz">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000000.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hertz"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mega"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <owl:sameAs rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#metre"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">m</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubed -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubed">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubed"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerKilogram -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerKilogram">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubed"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubedPerSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubed"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecondSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterPerSecondSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerKilogram -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerKilogram">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerSecondSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquaredPerSecondSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#metre -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#metre">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micro -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micro">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-6</sweet_screla:hasNumericValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micrometer -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micrometer">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <owl:sameAs rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micron"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-6</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micron -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#micron">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#millenium -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#millenium">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#year"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#milli -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#milli">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.001</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">m</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#millimeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#millimeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.001</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#milli"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#million_km2 -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#million_km2">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-12</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#million_km3 -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#million_km3">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-15</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterCubed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#minute -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#minute">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">60.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mole -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mole">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mol</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#month -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#month">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2629744.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#nano -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#nano">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-9</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">n</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#nanometer -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#nanometer">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-9</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#nano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newton -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newton">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newtonMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newtonMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newtonPerMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newtonPerMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newton"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#normalizedUnit -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#normalizedUnit">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ohm -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ohm">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpereSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondCubed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ohmMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ohmMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ohm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascal -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascal">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#newton"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pa</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascalPerSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascalPerSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascal"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pa/s</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascalSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascalSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascal"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpere -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpere">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpereSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpereSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-2.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ampere"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perCandela -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perCandela">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#candela"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogramMeterSquaredPerSecondKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogramMeterSquaredPerSecondKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kelvin"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogramMole -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogramMole">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mole"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterCubed -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterCubed">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-3.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-2.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMil -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMil">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.001</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMole -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMole">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#mole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perPascal -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perPascal">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pascal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perRadian -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perRadian">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hz</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondCubed -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondCubed">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-3.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-2.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSteradian -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSteradian">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#steradian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perTesla -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perTesla">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#tesla"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perVolt -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perVolt">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#percent -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#percent">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.01</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#permil -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#permil">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.001</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#peta -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#peta">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E15</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppb -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppb">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-9</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppbv -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppbv">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-9</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volumeRatio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppm -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppm">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-6</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppmv -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppmv">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-6</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volumeRatio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppt -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ppt">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-12</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pptv -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#pptv">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E-12</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volumeRatio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rad</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radianPerSecond -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radianPerSecond">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radianPerSecondSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radianPerSecondSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#radian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ratio">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#season -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#season">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">7889232.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#secondSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#secondSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemens -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemens">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByRaisingToPower"/>
+        <sweet_mrela:toThePower rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-1.0</sweet_mrela:toThePower>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#ohm"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemensPerKilogram -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemensPerKilogram">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemensPerMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemensPerMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#siemens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#steradian -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#steradian">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sr</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#tera -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#tera">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Prefix"/>
+        <sweet_screla:hasNumericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E12</sweet_screla:hasNumericValue>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#terahertz -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#terahertz">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0E12</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#hertz"/>
+        <sweet_screla:hasPrefix rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#tera"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#tesla -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#tesla">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#weber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volt -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volt">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpere"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondCubed"/>
+        <sweet_screla:hasSymbol rdf:datatype="http://www.w3.org/2001/XMLSchema#string">V</sweet_screla:hasSymbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#voltPerMeter -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#voltPerMeter">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volumeRatio -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#volumeRatio">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#watt -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#watt">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#joule"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterPerKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterPerKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#watt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquared -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquared">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#watt"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerKelvin -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerKelvin">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perKelvin"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerSteradian -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerSteradian">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSteradian"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerSteradianPerWavelength -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquaredPerSteradianPerWavelength">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perMeter"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSteradian"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#wattPerMeterSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#weber -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#weber">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDefinedByProduct"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#kilogram"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#meterSquared"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perAmpere"/>
+        <sweet_mrela:hasOperand rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#perSecondSquared"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#week -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#week">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">604800.0</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#year -->
+
+    <owl:NamedIndividual rdf:about="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#year">
+        <rdf:type rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#UnitDerivedByScaling"/>
+        <sweet_mrela:hasScalingNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.1556926E7</sweet_mrela:hasScalingNumber>
+        <sweet_screla:hasBaseUnit rdf:resource="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#second"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,197 @@
+@prefix ns: <http://ontology.universaal.org/PhThing.owl#> .
+@prefix ns1: <http://ontology.universAAL.org/SimpleHealthclient.owl#> .
+@prefix ns2: <http://ontology.universaal.org/Measurement.owl#> .
+@prefix ns3: <http://ontology.universaal.org/HealthMeasurement.owl#> .
+@prefix ns4: <http://ontology.universAAL.org/Device.owl#> .
+@prefix ns5: <http://ontology.universAAL.org/PersonalHealthDevice.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix UniversAAL_Context: <http://ontology.universAAL.org/Context.owl#> .
+@prefix UniversAAL: <http://ontology.universaal.org/> .
+@prefix iiot: <http://inter-iot.org/> .
+@prefix iiotex: <http://inter-iot.org/ex/> .
+@prefix uo: <http://purl.obolibrary.org/obo/uo.owl> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix oldssn:	<http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+iiot:plat/Platform1
+  a sosa:Platform ;
+  sosa:hosts iiot:dev/Device_1 ;
+
+  iiot:hasComponent _b:0 ;
+
+  m3-lite:hasDomainOfInterest m3-lite:Health ;
+
+  iiot:hasSemantics iiot:onto/UniversAAL_PhThing ;
+  iiot:hasSemantics iiot:onto/UniversAAL_SimpleHealthclient ;
+  iiot:hasSemantics iiot:onto/UniversAAL_Measurement ;
+  iiot:hasSemantics iiot:onto/UniversAAL_HealthMeasurement ;
+  iiot:hasSemantics iiot:onto/UniversAAL_Device ;
+  iiot:hasSemantics iiot:onto/UniversAAL_PersonalHealthDevice ;
+  iiot:hasSemantics iiot:onto/UniversAAL_Context .
+
+_b:0
+  a iiot:Middleware ;
+  iiot:platformType iiotex:UniversAAL ;
+  iiot:hasMessageBroker _b:1 .
+
+  _b:1
+    ???:hasVersion 123 ;
+    ???:hasName UniversAALContextBroker .
+
+iiot:onto/UniversAAL_PhThing
+  a iiot:Ontology ;
+  ???:hasVersion 123 ;
+  ???:URI UniversAAL:PhThing.owl# .
+
+iiot:onto/UniversAAL_SimpleHealthclient
+    a iiot:Ontology ;
+    ???:URI UniversAAL:SimpleHealthclient.owl# .
+
+iiot:onto/UniversAAL_Measurement
+    a iiot:Ontology ;
+    ???:URI UniversAAL:Measurement.owl# .
+
+iiot:onto/UniversAAL_HealthMeasurement
+    a iiot:Ontology ;
+    ???:URI UniversAAL:HealthMeasurement.owl# .
+
+iiot:onto/UniversAAL_Device
+    a iiot:Ontology ;
+    ???:URI UniversAAL:Device.owl# .
+
+iiot:onto/UniversAAL_PersonalHealthDevice
+    a iiot:Ontology ;
+    ???:URI UniversAAL:PersonalHealthDevice.owl# .
+
+iiot:onto/UniversAAL_Context
+    a iiot:Ontology ;
+    ???:URI UniversAAL:Context.owl# .
+
+
+#Observation
+#	observationResult CustomOutput
+#						hasValue CustomValue
+#									hasCustom(Quantity)Value 123
+
+
+iiot:instances/Observation_1
+	a ssn:Observation ;
+#  sosa:hasSimpleResult 1234^^xsd:Int ;
+	sosa:resultTime "2017-05-11T10:38:12.94"^^xsd:DateTime ;
+	sosa:madeBySensor iiot:dev/Device_1 .
+	sosa:observedProperty iiot:prop/Property_1 ;
+	sosa:phenomenonTime [a time:Instant ;
+						inXSDDateTimeStamp "2017-05-11T10:38:12.949+02:00"^^xsd:dateTimeStamp] ;
+	sosa:hasResult [a sosa:Result ;
+					iiot:hasUnit iiotex:kilogram] ;
+					iiot:hasValue ???] .
+
+	sosa:hasFeatureOfInterest iiot:instances/Person_1 ;
+	ssn:wasOriginatedBy [a ssn:Stimulus] ;
+
+	iiot:resultGeolocation [a geosparql:Geometry ;
+							geosparql:asWKT "POINT(12.0 12.0)"^^<http://www.opengis.net/ont/sf#wktLiteral> .]
+
+iiot:instances/Person_1 ;
+	a sosa:FeatureOfInterest ;
+	ssn:hasProperty iiot:prop/Property_1 .
+
+iiot:prop/Property_1
+	a sosa:ObservableProperty ;
+	a ???m3-lite:mass ;
+
+iiot:dev/Device_1
+	a oldssn:Device ,
+		sosa:Sensor ,
+    ns5:WeighingScale .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@prefix ns: <http://ontology.universaal.org/PhThing.owl#> .
+@prefix ns1: <http://ontology.universAAL.org/SimpleHealthclient.owl#> .
+@prefix ns2: <http://ontology.universaal.org/Measurement.owl#> .
+@prefix ns3: <http://ontology.universaal.org/HealthMeasurement.owl#> .
+@prefix ns4: <http://ontology.universAAL.org/Device.owl#> .
+@prefix ns5: <http://ontology.universAAL.org/PersonalHealthDevice.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix UniversAAL_Context: <http://ontology.universAAL.org/Context.owl#> .
+@prefix UniversAAL: <http://ontology.universaal.org/> .
+@prefix iiot: <http://inter-iot.org/> .
+@prefix iiotex: <http://inter-iot.org/ex/> .
+@prefix uo: <http://purl.obolibrary.org/obo/uo.owl> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix oldssn:	<http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix sweet_units: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix geosparql: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+#GOIoTP device description
+iiot:Device_1
+	a oldssn:Device ,
+		sosa:Sensor ,
+		<http://ontology.universAAL.org/PersonalHealthDevice.owl#WeighingScale> .
+
+#GOIoTP platform description
+iiot:Platform1
+	a iiot:SoftwarePlatform ;
+	sosa:hosts iiot:devDevice_1 ;
+	iiot:hasComponent iiot:Middleware_1 ;
+	iiot:hasSemantics iiot:ontoUniversAAL_PhThing .
+
+#GOIoTP observation that uses GOIoTP-ex units
+iiot:instancesObservation_1
+	a ssn:Observation ;
+	sosa:resultTime "2017-05-11T10:38:12.94"^^xsd:DateTime ;
+	sosa:madeBySensor iiot:devDevice_1 ;
+	sosa:observedProperty iiot:propProperty_1 ;
+	sosa:phenomenonTime [a time:Instant ;
+			time:inXSDDateTimeStamp "2017-05-11T10:38:12.949+02:00"^^xsd:dateTimeStamp] ;
+	sosa:hasResult [a sosa:Result ;
+					iiot:hasMeasurementKind iiotex:Mass ;
+					iiot:hasUnit sweet_units:kilogram ;
+					iiot:hasValue "80.5"^^xsd:float ] ;
+	iiot:hasLocation [a geosparql:Geometry ;
+			geosparql:asWKT "POINT(12.0 12.0)"^^<http://www.opengis.net/ont/sf#wktLiteral>
+                          ] .

@@ -1,0 +1,73 @@
+/*
+  INTER-IoT. Interoperability of IoT Platforms.
+  INTER-IoT is a R&D project which has received funding from the European
+  Union's Horizon 2020 research and innovation programme under grant
+  agreement No 687283.
+  
+  Copyright (C) 2016-2018, by (Author's company of this file):
+   - Systems Research Institute Polish Academy of Sciences
+    
+  For more information, contact:
+  - @author <a href="mailto:pawel.szmeja@ibspan.waw.pl">Paweł Szmeja</a>
+  - Project coordinator:  <a href="mailto:coordinator@inter-iot.eu"></a>
+  
+  This code is licensed under the EPL license, available at the root
+  application directory.
+  */
+
+.iiot-centered {
+	text-align: center;
+}
+
+.iiot-script {
+	font-family: courier;
+}
+
+html {
+	background-image: none !important;
+}
+
+span.manColor{
+	color: #4d0a59;
+}
+
+.float-right {
+	float: right;
+}
+
+section.entitydef table tbody th {
+	width: 120px;
+}
+
+.owl-type-symbol {
+	vertical-align: super;
+    font-size: smaller;
+    float: right;
+    top: -3.3em;
+    position: relative;
+    font-weight: bold;
+}
+
+.type-class {
+	color: #916f00;
+}
+
+.type-indivivual {
+	color: #4e0163;
+}
+
+.type-object-property {
+	color: #064f00;
+}
+
+.type-datatype-property {
+	color: #011970;
+}
+
+.type-annotation-property {
+	color: #702900;
+}
+
+.type-datatype {
+	color: #770000;
+}

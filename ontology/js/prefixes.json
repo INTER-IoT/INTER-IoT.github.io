@@ -1,0 +1,142 @@
+[
+	{
+		"name": "GOIoTP",
+		"prefix": "iiot",
+		"uri": "http://inter-iot.eu/GOIoTP#"
+	},
+	{
+		"name": "GOIoTPex",
+		"prefix": "iiotex",
+		"uri": "http://inter-iot.eu/GOIoTPex#"
+	},
+	{
+		"name": "SSN",
+		"prefix": "ssn",
+		"uri": "http://www.w3.org/ns/ssn/"
+	},
+	{
+		"name": "SOSA",
+		"prefix": "sosa",
+		"uri": "http://www.w3.org/ns/sosa/"
+	},
+	{
+		"name": "SSNX",
+		"prefix": "oldssn",
+		"uri": "http://purl.oclc.org/NET/ssnx/ssn#"
+	},
+	{
+		"name": "Open Geospatial URI base",
+		"prefix": "ogc",
+		"uri": "http://www.opengis.net/"
+	},
+	{
+		"name": "OGC simple feature geometries",
+		"prefix": "sf",
+		"uri": "http://www.opengis.net/ont/sf#"
+	},
+	{
+		"name": "OGC geometries",
+		"prefix": "gml",
+		"uri": "http://www.opengis.net/ont/gml#"
+	},
+	{
+		"name": "GeoSPARQL",
+		"prefix": "geosparql",
+		"uri": "http://www.opengis.net/ont/geosparql#"
+	},
+	{
+		"name": "GeoSPARQL functions",
+		"prefix": "geosparqlf",
+		"uri": "http://www.opengis.net/def/function/geosparql/"
+	},
+	{
+		"name": "GeoSPARQL rules",
+		"prefix": "geosparqlr",
+		"uri": "http://www.opengis.net/def/rule/geosparql/"
+	},
+	{
+		"name": "NASA SWEET units",
+		"prefix": "sweet_units",
+		"uri": "http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#"
+	},
+	{
+		"name": "NASA SWEET mathematical operations",
+		"prefix": "sweet_oper",
+		"uri": "http://sweet.jpl.nasa.gov/2.3/reprMathOperation.owl#"
+	},
+	{
+		"name": "NASA SWEET representation",
+		"prefix": "sweet_repr",
+		"uri": "http://sweet.jpl.nasa.gov/2.3/repr.owl#"
+	},
+	{
+		"name": "NASA SWEET mathematical relations",
+		"prefix": "sweet_mrela",
+		"uri": "http://sweet.jpl.nasa.gov/2.3/relaMath.owl#"
+	},
+	{
+		"name": "NASA SWEET scientific relations",
+		"prefix": "sweet_screla",
+		"uri": "http://sweet.jpl.nasa.gov/2.3/relaSci.owl#"
+	},
+	{
+		"name": "W3C time",
+		"prefix": "time",
+		"uri": "http://www.w3.org/2006/time#"
+	},
+	{
+		"name": "Vocabluary annotation",
+		"prefix": "vann",
+		"uri": "http://purl.org/vocab/vann/"
+	},
+	{
+		"name": "Vocabluary of a Friend",
+		"prefix": "voaf",
+		"uri": "http://purl.org/vocommons/voaf#"
+	},
+	{
+		"name": "Friend of a friend",
+		"prefix": "foaf",
+		"uri": "http://xmlns.com/foaf/0.1/"
+	},
+	{
+		"name": "Dublin Core elements",
+		"prefix": "dc",
+		"uri": "http://purl.org/dc/elements/1.1/"
+	},
+	{
+		"name": "Dublin Core",
+		"prefix": "dcterms",
+		"uri": "http://purl.org/dc/terms/"
+	},
+	{
+		"name": "Semantic Web Status",
+		"prefix": "vs",
+		"uri": "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+	},
+	{
+		"name": "OWL",
+		"prefix": "owl",
+		"uri": "http://www.w3.org/2002/07/owl#"
+	},
+	{
+		"name": "RDF",
+		"prefix": "rdf",
+		"uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	},
+	{
+		"name": "RDF schema",
+		"prefix": "rdfs",
+		"uri": "http://www.w3.org/2000/01/rdf-schema#"
+	},
+	{
+		"name": "XML",
+		"prefix": "xml",
+		"uri": "http://www.w3.org/XML/1998/namespace"
+	},
+	{
+		"name": "XML datatypes",
+		"prefix": "xsd",
+		"uri": "http://www.w3.org/2001/XMLSchema#"
+	}
+]

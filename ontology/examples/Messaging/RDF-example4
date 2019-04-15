@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY ssn "http://purl.oclc.org/NET/ssnx/ssn#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<!ENTITY ucum "http://purl.oclc.org/NET/muo/ucum/">
+]>
+<rdf:RDF xmlns:smart-knife="http://purl.oclc.org/NET/ssnx/product/smart-knife#" 
+xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#" 
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+xmlns:owl="http://www.w3.org/2002/07/owl#"  
+xmlns:ucum="http://purl.oclc.org/NET/muo/ucum/" 
+>
+	<owl:Thing rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#KnifeCuttingObservation_435782677">
+		<rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#AccelerationObservation"/>
+		<ssn:observedProperty rdf:resource="http://purl.oclc.org/NET/muo/ucum#physical-quality/acceleration"/>
+		<ssn:observationResult rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#KnifeSensorOutput_2355676"/>
+		<ssn:featureOfInterest rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#Knife_123"/>
+		<ssn:observedBy rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#ExampleWiTilt30Accelerometer"/>
+	</owl:Thing>
+	
+	<owl:Thing rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#KnifeSensorOutput_2355676">
+		<rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#AccelerationSensorOutput"/>
+		<ssn:isProducedBy rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#ExampleWiTilt30Accelerometer"/>
+		<ssn:hasValue rdf:resource="http://purl.oclc.org/NET/ssnx/product/smart-knife#ZAxisAccelerationMeasurementValue"/>
+	</owl:Thing>
+	
+	<smart-knife:AccelerationValue rdf:about="http://purl.oclc.org/NET/ssnx/product/smart-knife#ZAxisAccelerationMeasurementValue">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+		<smart-knife:hasQuantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.98</smart-knife:hasQuantityValue>
+	</smart-knife:AccelerationValue>	
+</rdf:RDF>

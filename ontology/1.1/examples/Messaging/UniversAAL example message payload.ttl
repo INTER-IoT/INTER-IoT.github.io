@@ -1,0 +1,44 @@
+@prefix ns: <http://ontology.universaal.org/PhThing.owl#> .
+@prefix ns1: <http://ontology.universAAL.org/SimpleHealthclient.owl#> .
+@prefix ns2: <http://ontology.universaal.org/Measurement.owl#> .
+@prefix ns3: <http://ontology.universaal.org/HealthMeasurement.owl#> .
+@prefix ns4: <http://ontology.universAAL.org/Device.owl#> .
+@prefix ns5: <http://ontology.universAAL.org/PersonalHealthDevice.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://ontology.universAAL.org/Context.owl#> .
+
+<urn:org.universAAL.middleware.context.rdf:ContextEvent#_:9e2aa729ac420ba3:182a>
+  :hasProvider ns1:pub2 ;
+  a :ContextEvent ;
+  rdf:subject ns1:scale ;
+  :hasTimestamp "1418143893015"^^xsd:long ;
+  rdf:predicate ns4:hasValue ;
+  rdf:object ns1:weight .
+
+ns1:scale
+  a ns5:WeighingScale ,
+    ns:Device ,
+    ns:PhysicalThing ;
+  ns4:hasValue ns1:weight .
+
+:gauge a :ContextProviderType .
+
+ns1:pub2
+  a :ContextProvider ;
+  :hasType :gauge ;
+  :myClassesOfEvents [
+      a :ContextEventPattern ;
+      <http://www.w3.org/2000/01/rdf-schema#subClassOf> [
+          a owl:Restriction ;
+          owl:allValuesFrom ns5:WeighingScale ;
+          owl:onProperty rdf:subject
+        ]
+    ] .
+
+ns1:weight
+  a ns3:PersonWeight ,
+    ns3:HealthMeasurement ,
+    ns2:Measurement ;
+  ns2:value "0.0"^^xsd:float .

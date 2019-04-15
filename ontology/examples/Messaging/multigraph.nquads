@@ -1,0 +1,34 @@
+<http://inter-iot.eu/message/metadata123> <http://inter-iot.eu/message/conversationId> "1"^^<http://www.w3.org/2001/XMLSchema#integer> <http://inter-iot.eu/message/graph> .
+<http://inter-iot.eu/message/metadata123> <http://inter-iot.eu/message/platformId> <http://g> <http://inter-iot.eu/message/graph> .
+<http://inter-iot.eu/message/metadata123> <http://inter-iot.eu/message/property> "prop value" <http://inter-iot.eu/message/graph> .
+<http://inter-iot.eu/message/metadata123> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://inter-iot.eu/message/metadata> <http://inter-iot.eu/message/graph> .
+<http://purl.oclc.org/NET/ssnx/meteo/aws#air_temperature> <http://purl.oclc.org/NET/ssnx/qu/qu#unit> <http://sensordb.csiro.au/ontology/phenonet#degreeCelsius> <http://graph1> .
+<http://purl.oclc.org/NET/ssnx/meteo/aws#air_temperature> <http://www.w3.org/ns/r2rml#columnName> "temperature" <http://graph1> .
+<http://sensordb.csiro.au/id/city1> <http://www.w3.org/2000/01/rdf-schema#label> "cityname" <http://graph1> .
+<http://sensordb.csiro.au/id/conti> <http://www.w3.org/2000/01/rdf-schema#label> "conti" <http://graph1> .
+<http://sensordb.csiro.au/id/country1> <http://www.w3.org/2000/01/rdf-schema#label> "country" <http://graph1> .
+<http://sensordb.csiro.au/id/place/location1> <http://linkedgeodata.org/property/is_in_continent> <http://sensordb.csiro.au/id/conti> <http://graph1> .
+<http://sensordb.csiro.au/id/place/location1> <http://linkedgeodata.org/property/is_in_country> <http://sensordb.csiro.au/id/country1> <http://graph1> .
+<http://sensordb.csiro.au/id/place/location1> <http://linkedgeodata.org/property/is_in_province> <http://sensordb.csiro.au/id/prov1> <http://graph1> .
+<http://sensordb.csiro.au/id/place/location1> <http://lsm.deri.ie/ont/lsm.owl#is_in_city> <http://sensordb.csiro.au/id/city1> <http://graph1> .
+<http://sensordb.csiro.au/id/place/location1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.loa-cnr.it/ontologies/DUL.owl#Place> <http://graph1> .
+<http://sensordb.csiro.au/id/place/location1> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "52.3"^^<http://www.w3.org/2001/XMLSchema#decimal> <http://graph1> .
+<http://sensordb.csiro.au/id/place/location1> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "98.2"^^<http://www.w3.org/2001/XMLSchema#decimal> <http://graph1> .
+<http://sensordb.csiro.au/id/prov1> <http://www.w3.org/2000/01/rdf-schema#label> "province" <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://lsm.deri.ie/ont/lsm.owl#hasSensorType> <http://sensordb.csiro.au/id/sensorType1> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://lsm.deri.ie/ont/lsm.owl#hasSourceType> "SourceType" <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty> <http://sensordb.csiro.au/id/sensor/5010/accuracy/acc_1> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://purl.oclc.org/NET/ssnx/ssn#observes> <http://purl.oclc.org/NET/ssnx/meteo/aws#air_temperature> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://purl.oclc.org/NET/ssnx/ssn#ofFeature> <http://sensordb.csiro.au/id/site/narrabri/sf/sf_narrabri> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://purl.oclc.org/NET/ssnx/ssn#onPlatform> <http://sensordb.csiro.au/id/site/narrabri/Pweather> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://purl.org/net/provenance/ns#PerformedBy> "SensorSource" <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://sensordb.csiro.au/ontology/phenonet#hasSerialNumber> <http://sensordb.csiro.au/id/sensor/5010/serial/serial2> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://www.loa-cnr.it/ontologies/DUL.owl#hasLocation> <http://sensordb.csiro.au/id/place/location1> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.oclc.org/NET/ssnx/meteo/aws#CapacitiveBead> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.oclc.org/NET/ssnx/ssn#Sensor> <http://graph1> .
+<http://sensordb.csiro.au/id/sensor/5010> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor 5010" <http://graph1> .
+<http://sensordb.csiro.au/id/sensorType1> <http://www.w3.org/2000/01/rdf-schema#label> "TypeName" <http://graph1> .
+<http://sensordb.csiro.au/id/site/narrabri/Pweather> <http://purl.oclc.org/NET/ssnx/ssn#inDeployment> <http://sensordb.csiro.au/id/site/narrabri/deployment/2013> <http://graph1> .
+<http://sensordb.csiro.au/id/site/narrabri/Pweather> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.oclc.org/NET/ssnx/ssn#Platform> <http://graph1> .
+<http://sensordb.csiro.au/id/site/narrabri/sf/sf_narrabri> <http://purl.oclc.org/NET/ssnx/ssn#ofFeature> <http://purl.oclc.org/NET/ssnx/cf/cf-feature#atmosphere_air> <http://graph1> .
+<http://sensordb.csiro.au/id/site/narrabri/sf/sf_narrabri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://sensordb.csiro.au/ontology/phenonet#SamplingFeature> <http://graph1> .

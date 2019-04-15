@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+  INTER-IoT. Interoperability of IoT Platforms.
+  INTER-IoT is a R&D project which has received funding from the European
+  Union's Horizon 2020 research and innovation programme under grant
+  agreement No 687283.
+  
+  Copyright (C) 2016-2018, by (Author's company of this file):
+   - Systems Research Institute Polish Academy of Sciences
+    
+  For more information, contact:
+  - @author <a href="mailto:pawel.szmeja@ibspan.waw.pl">Paweł Szmeja</a>
+  - Project coordinator:  <a href="mailto:coordinator@inter-iot.eu"></a>
+  
+  This code is licensed under the EPL license, available at the root
+  application directory.
+-->
+    <meta charset='utf-8'>
+    <title>Generic Ontology for IoT Platforms</title>
+	<link rel="stylesheet" type="text/css" href="style/goiotp.css" />
+	<link rel="stylesheet" type="text/css" href="style/sosa_modified.css" />
+    <script
+            src='https://www.w3.org/Tools/respec/respec-w3c-common'
+            class='remove'></script>
+	<script
+			src='js/goiotp_doc.js'
+            class='remove'></script>
+    <!-- <script
+			src='js/jquery.js'>
+			</script>
+	<script
+			src='js/js_prettify.js'>
+			</script> -->
+    <script class='remove'>
+      var respecConfig = {
+        //specStatus: "base",
+        specStatus: "unofficial",
+		subtitle: "GOIoTP and GOIoTPex online documentation",
+		copyrightStart: 2016,
+		//publishDate: "2018-01-01",
+		//additionalCopyrightHolders = "Systems Research Institute, Polish Academy of Sciences",
+		//format: "markdown",
+        editors: [{
+          name: "Paweł Szmeja",
+          url: "mailto:pawel.szmeja@ibspan.waw.pl",
+		  company: "Systems Research Institute, Polish Academy of Sciences",
+		  companyURL: "http://www.ibspan.waw.pl/glowna/en",
+        }],
+		authors: [
+		/*{
+			name: "Ada Lovelace",
+			url: "http://findingada.com/",
+			company: "Aristocracy",
+			note: "until <time>1852-11-27</time>"
+		},*/
+		{
+          name: "Paweł Szmeja",
+          url: "mailto:pawel.szmeja@ibspan.waw.pl",
+		  company: "Systems Research Institute, Polish Academy of Sciences",
+		  companyURL: "http://www.ibspan.waw.pl/glowna/en",
+        }],
+        processVersion: 2018,
+        //edDraftURI: "http://some.github.repo",
+        shortName: "goiotp",
+		logos: [{
+			src: 'img/InterIoT-logo.png',
+			href: "https://inter-iot.eu",
+			alt: "INTER-IoT logo",
+			width: 100,
+			height: 65,
+			id: 'inter-iot-logo'
+		}],
+		otherLinks: [{
+		    key: 'INTER-IoT Ontologies',
+			data: [{
+			  value: 'GOIoTP ',
+			  href: 'http://docs.inter-iot.eu/ontology/owl/GOIoTP.rdf'
+			},
+			{
+			  value: 'GOIoTPex',
+			  href: 'http://docs.inter-iot.eu/ontology/owl/GOIoTPex.rdf'
+			}]},
+			{
+			key: 'INTER-IoT Documentation',
+			data: [{
+			  value: 'Landing page',
+			  href: 'http://docs.inter-iot.eu'
+			}, {
+			  value: 'Git wiki (requires login)',
+			  href: 'https://git.inter-iot.eu/Inter-IoT/commons/wiki/'
+			}]
+		  },
+		  {
+			key: "INTER-IoT registries",
+			data: [{
+			  value: "Maven Nexus",
+			  href: "http://nexus.inter-iot.eu/"
+			}]
+		  },
+		  {
+			key: "INTER-IoT code repositories",
+			data: [{
+			  value: "Git",
+			  href: "https://git.inter-iot.eu/"
+			}]
+		  },
+		  {
+			key: "INTER-IoT contacts",
+			data: [{
+			  value: "Project coordinator",
+			  href: "mailto:coordinator@inter-iot.eu?cc=pawel.szmeja@ibspan.waw.pl&subject=INTER-IoT ontologies"
+			}]
+		  }],
+      };
+
+
+    </script>
+</head>
+<body>
+<section id='abstract'>
+	<h2>Abstract</h2>
+    <p>
+	Generic Ontology for IoT Platforms (<strong>GOIoTP</strong>) is a core ontology for IoT. Developed as part of the INTER-IoT project, it offers modular data structures for description of entities most commonly appearing in IoT in the context of interoperating various different IoT artifacts (platforms, devices, services, etc). At the same time, <strong>GOIoTP</strong> is the reference meta-data model proposed by INTER-IoT.
+	</p>
+	</p>
+	Generic Ontology for IoT Platforms Extended (<strong>GOIoTPex</strong>) is an extension, and a vertical module that imports the <strong>GOIoTP</strong> ontology, both developed as part of the INTER-IoT project. <strong>GOIoTPex</strong> extends and "fills" select stub classes from <strong>GOIoTP</strong> with more specific classes, properties and individuals. In short, <strong>GOIoTPex</strong> ontology extends <strong>GOIoTP</strong> with terms required in the concrete instantiation and implementation in the INTER-IoT project.
+	<!-- Generic Ontology for IoT Platforms - INTER-IoT instantiation and extension -->
+	</p>
+	</p>
+	For more information, please refer to <a href="http://www.inter-iot-project.eu/deliverables">INTER-IoT deliverables</a> (specifically D4.2 and D4.1).
+    </p>
+
+<!-- <p>The Semantic Sensor Network (SSN) ontology is an ontology for describing sensors and their observations, the involved procedures, the studied features of interest, the samples used to do so, and the observed properties, as well as actuators. SSN
+	follows a horizontal and vertical modularization architecture by including a lightweight but self-contained core ontology called SOSA (Sensor, Observation, Sample, and Actuator) for its elementary classes and properties. With their different
+	scope and different degrees of axiomatization, SSN and SOSA are able to support a wide range of applications and use cases, including satellite imagery, large-scale scientific monitoring, industrial and household infrastructures, social sensing,
+	citizen science, observation-driven ontology engineering, and the Web of Things. Both ontologies are described below, and examples of their usage are given.</p>-->
+
+	<!-- Repeated sections? -->
+
+	<p class="iiot-centered">
+		The namespace for GOIoTP terms is <span class="iiot-script">http://inter-iot.eu/goiotp#</span><br>
+		The namespace for GOIoTPex terms is <span class="iiot-script">http://inter-iot.eu/goiotpex#</span>
+	</p>
+	<p class="iiot-centered">
+		The preferred prefix for the <strong>GOIoTP</strong> namespace is <span class="iiot-script">iiot</span>.<br>
+		The preferred prefix for the <strong>GOIoTPex</strong> namespace is <span class="iiot-script">iiotex</span>.
+	</p>
+	<p class="iiot-centered">
+		<!-- The <strong>GOIoTP</strong> ontology file is available at <a href="owl/GOIoTP.rdf">http://docs.inter-iot.eu/ontology/owl/GOIoTP.rdf</a>.<br>
+		The <strong>GOIoTPex</strong> ontology file is available at <a href="owl/GOIoTPex.rdf">http://docs.inter-iot.eu/ontology/owl/GOIoTPex.rdf</a>. -->
+		The <strong>GOIoTP</strong> and <strong>GOIoTPex</strong> ontology files are available below in RDF/XML and TTL formats:
+		<p class="iiot-centered">
+			<a href="owl/GOIoTP.rdf" target="_blank"><img src="img/GOIoTPformatRDFXML.png" alt="GOIoTP RDF/XML"></a>
+			<a href="owl/GOIoTP.ttl" target="_blank"><img src="img/GOIoTPformatTTL.png" alt="GOIoTP TTL"></a>
+		</p>
+		<p class="iiot-centered">
+			<a href="owl/GOIoTPex.rdf" target="_blank"><img src="img/GOIoTPexformatRDFXML.png" alt="GOIoTPex RDX/XML"></a>
+			<a href="owl/GOIoTPex.ttl" target="_blank"><img src="img/GOIoTPexformatTTL.png" alt="GOIoTPex TTL"></a>
+		</p>
+	</p>
+	<p>
+		<em>INTER-IoT is a R&D project which has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 687283.</em>
+	</p>
+	
+	<p class="advisement">
+		<strong>GOIoTP</strong> is not officially endorsed by W3C, nor is it a recommendation, draft recommendation, proposal, or any other official W3C document or standard.
+	</p>
+	<p class="advisement">
+		Some styles used in this documentation were copied (and modified) from the styles of <a href="https://www.w3.org/TR/vocab-ssn/">SSN/SOSA documentation</a>.
+	</p>
+	<p class="advisement">
+		This documentation was generated using <strong>ReSpec</strong> and <strong>INTER-IoT Ontology Documentation Tool</strong>. If you would like to use the same tool for your documentation, send an email inquiry to the editors of this file (listed on top of the page).
+	</p>
+</section>
+<!--
+<section id='sotd'>
+    <p>
+        Status of This Document. This is required.
+    </p>
+</section>
+-->
+
+<section class="informative">
+<h2>Introduction</h2>
+<!-- Test <code>test </code>test. -->
+<p>
+The INTER-IoT ontology named <strong>GOIoTP</strong> (Generic Ontology for IoT Platforms) was engineered to fulfill the requirements put forth by INTER-IoT, but also to offer a core ontology for any artifact in the IoT domain. While reusing existing standardized and established ontologies used in IoT (most notably <a href="https://www.w3.org/TR/vocab-ssn/">SSN and SOSA</a>), GOIoTP  proposes its own extensions, in order to provide a complete, modular ontology, useful in a wide range of IoT use cases.
+</p>
+<p>
+<strong>GOIoTP</strong> is a core ontology, and, as such, it defines some stub classes - i.e. classes that do not have a robust definition, or subclasses. This is a design decision intended to enable different extensions, for those stub concepts, depending on particular needs of an implementation, and follows the usual design patterns for top-level ontologies. Other than offering less restrictions on implementers, stub classes are also easier to align to, and from, other core IoT ontologies.
+</p>
+<p>
+In order to offer a more complete interoperability solution, we have also defined an extension to <strong>GOIoTP</strong> that expands the definitions and "stubs" in <strong>GOIoTP</strong> taxonomy. <strong>GOIoTPex</strong> is the multi-module ontology that extends the reference model of <strong>GOIoTP</strong> with concrete entities. It completes <strong>GOIoTP</strong> and is suitable for scenarios, in which a user is looking for a complete modeling solution.
+</p>
+<p>
+The details of conception of <strong>GOIoTP</strong> and <strong>GOIoTPex</strong>, as well as its place in INTER-IoT are explained in <a href="http://www.inter-iot-project.eu/deliverables">INTER-IoT deliverables</a>. WP4 deliverables (D4.2 and D4.1) focus on the INTER-IoT meta-data model (i.e. the ontologies) and reference architecture, while WP3 deliverables (D3.1, D3.2, and D3.3) contain implementation details, including information about usage of <strong>GOIoTP</strong> and <strong>GOIoTPex</strong> in INTER-IoT software.
+</p>
+
+<p>
+<strong>GOIoTP</strong> and <strong>GOIoTPex</strong> import or use parts of the following ontologies:
+<ul>
+	<li><a href="https://www.w3.org/TR/vocab-ssn/"><strong>SSN/SOSA</strong></a> - These ontologies are imported as a whole, and are the basis of <strong>GOIoTP</strong></li>. They have the strongest impact on the <a href="#mod_device">device</a> and <a href="#mod_observation">observation</a> modules, as those modules build directly on top of structures provided by SSN/SOSA.
+	<li><a href=""><strong>GeoSPARQL</strong></a> - The GeoSPARQL ontologies, specifically <a href="http://www.opengis.net/ont/geosparql#">base</a>, <a href="http://www.opengis.net/def/function/geosparql/">functions</a>, and <a href="http://www.opengis.net/def/rule/geosparql/">rules</a>, used in the <a href="#mod_location">location module</a>.</li>
+	<li><a href="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#"><strong>NASA SWEET units</strong></a> - These subset of <a href="https://sweet.jpl.nasa.gov/">SWEET</a> ontologies, specifically <a href="">units</a>, <a href="">mathematical operations</a>, <a href="">representation</a>, <a href="">mathematical relations</a>, and <a href="">scientific relations</a> are used to model concrete instances and types of units in the <a href="#mod_units">units and measurements module</a>.</li>
+	<li>Various <strong>provenance</strong> properties and classes from well-known ontologies, such as <a href="http://purl.org/dc/terms/">Dublin Core</a>, <a href="http://xmlns.com/foaf/0.1/">FOAF</a>, and <a href="http://www.w3.org/2003/06/sw-vocab-status/ns#">Semantic Web Status</a>, are used to annotate the <strong>GOIoTP</strong> and <strong>GOIoTPex</strong> ontologies themselves</li>
+</ul>
+<p>
+The full list of used ontologies can be found in section <a href="#prefixes"></a>.
+</p>
+<br/>
+<p>
+The key for all ontology structure diagrams can be found in section <a href="#diagram_key"></a>.
+</p>
+</section>
+<section>
+<h2>Ontology structure</h2>
+
+<p>
+<strong>GOIoTP</strong> and <strong>GOIoTPex</strong> are conceptually divided into interconnected horizontal modules that together offer a fully-fledged IoT ontology. Each module is responsible for a specific subset of annotations, and the modules used in <strong>GOIoTP</strong> are mirrored in <strong>GOIoTPex</strong>.The defined modules are as follows:
+	<ul>
+		<li><a href="#mod_device">Device</a> - (optionally virtualized) hardware connected to IoT</li>
+		<li><a href="#mod_platform">Platform</a> - software platforms that host IoT devices</li>
+		<li><a href="#mod_observation">Observation (and actuation)</a> - information gathered by IoT entities from the world, or the intention to act upon it</li>
+		<li><a href="#mod_units">Units and Measurements</a> - systems of units and values</li>
+		<li><a href="#mod_location">Location</a> - position within the world, defined by coordinates or description</li>
+		<li><a href="#mod_service">Service</a> - web services offered by software</li>
+		<li><a href="#mod_user">User</a> - human or software that uses, or is a client of IoT entities</li>
+	</ul>
+</p>
+
+<p>The following sections of this document contain descriptions of each module.</p>
+
+<p>
+	<figure id="img_mod_outline">
+		<img src="img/module_outline.png" alt="GOIoTP and GOIoTPex modules">
+		<figcaption>GOIoTP and GOIoTPex modules.</figcaption>
+	</figure>
+</p>
+<!--
+The ontology has the following horizontal modules:
+    Device - (optionally virtualized) hardware connected to IoT
+    Platform - software platforms that host IoT devices
+    Observation (and actuation) - information gathered by IoT entities from the world, or the intention to act upon it
+    Units & measurements - systems of units and values
+    User - human or software that uses, or is a client of IoT entities
+    Geolocation - position within the world, defined by coordinates
+    Service - web services offered by software
+    Provenance - origin, ownership and history of IoT entities
+
+The GOIoTPex ontology extends the following GOIoTP modules:
+    Platform - software platforms that host IoT devices
+    Units & measurements - systems of units and values
+    User - human or software that uses, or is a client of IoT entities
+    Service - web services offered by software
+	-->
+
+<section id="mod_device">
+	<h2>Device module</h2>
+
+<p>The device module lies at the core of <strong>GOIoTP</strong> and, although the modules can be used independently, this one was the starting point of the ontology design. Other models often offer connections to this one i.e. properties that connect their entities to classes from the deivce module. The module itself models the core part of IoT, which is the device and its operation. It is centered around 4 classes -- <a href="#iiot-IoTDevice">iiot:IoTDevice</a>, <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a>, <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator">sosa:Actuator</a> and <a href="https://www.w3.org/TR/vocab-ssn/#SOSASampler">sosa:Sampler</a>.</p>
+
+<p>The most significant, from the modeling perspective, is the <a href="#iiot-IoTDevice">iiot:IoTDevice</a> class. As a subclass of <a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform">sosa:Platform</a> it hosts entities of type <a href="https://www.w3.org/TR/vocab-ssn/#SOSASystem">sosa:System</a>. It is a class that represents a collection that includes any kind of smart device (physical or virtual) connected to IoT, for instance mobile phones, tablets, wireless keyboards, light fixtures, traffic gates, parking meters, thermometers, smart medical equipment, and so on.</p>
+
+<p>The most informative classes are <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a> and <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator">sosa:Actuator</a>, which signify the purpose of a <a href="https://www.w3.org/TR/vocab-ssn/#SOSASystem">sosa:System</a> in an IoT ecosystem. Both are subclasses of <a href="https://www.w3.org/TR/vocab-ssn/#SOSASystem">sosa:System</a>, and can therefore be hosted on a <a href="#iiot-IoTDevice">iiot:IoTDevice</a> (or any other <a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform">sosa:Platform</a>). Any <a href="https://www.w3.org/TR/vocab-ssn/#SOSASystem">sosa:System</a> can have subsystems. Informally speaking, sensors and actuators \textit{usually} serve a smaller purpose than a whole IoT device -- e.g. detection of change in a single observable property (e.g. air temperature).
+</p>
+<p>
+Finally, GOIoTP does not place any special importance on <a href="https://www.w3.org/TR/vocab-ssn/#SOSASampler">sosa:Sampler</a>, which is a new introduction to <strong>SSN/SOSA</strong> since <strong>SSNX</strong>. It is, as a principle, supported by <strong>GOIoTP</strong> and <strong>INTER-IoT</strong>, but we have not found any specific use case during our work that would include it. It is technically part of <strong>GOIoTP</strong>, because the whole <strong>SSN/SOSA</strong> is imported into it.
+</p>
+<p>
+The device model of <strong>GOIoTP</strong> offers two ways to think of IoT devices. First one, closer to the original vision of <strong>SSNX</strong>, is that an <a href="#iiot-IoTDevice">iiot:IoTDevice</a> does not offer any sensing or actuating capabilities itself, instead being a platform that groups together (i.e. hosts) systems of sensors and actuators. Those systems offer sensing, or actuating, and are smaller and more granular than the whole device, and may have subsystems of their own. The second way to look at an IoT device, is to treat an IoT device as a single-purpose machine, i.e. an instance of both <a href="#iiot-IoTDevice">iiot:IoTDevice</a> and a <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a> (or <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator">sosa:Actuator</a>). This approach is suitable for specialized devices, such as a single purpose sensor measuring air quality. Because such sensor does not offer any other capability, we treat the whole device, as if it was a sensor itself.
+</p>
+<p>
+To summarize, an instance of an <a href="#iiot-IoTDevice">iiot:IoTDevice</a> can be a host for multiple systems, but it can also be a single purpose <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a> or <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator">sosa:Actuator</a> itself. We have found that in our initial implementations of INTER-IoT software, the latter case appeared much more often. Formally, not every <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a> or <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator">sosa:Actuator</a> is an <a href="#iiot-IoTDevice">iiot:IoTDevice</a>. An <a href="#iiot-IoTDevice">iiot:IoTDevice</a> \textit{usually} either is a <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a> (or <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator">sosa:Actuator</a>), or hosts at least one <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a> or <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator">sosa:Actuator</a>.
+</p>
+<p>
+Technically, an instance of <a href="#iiot-IoTDevice">iiot:IoTDevice</a> and a <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a> is at the same time a <a href="https://www.w3.org/TR/vocab-ssn/#SSNSystem">ssn:System</a> and a <a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform">sosa:Platform</a> (which is inferred from <strong>SSN/SOSA</strong> taxonomy). This is a callback to the device model in <strong>SSNX</strong>, where <a href="https://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Device">oldssn:Device</a> was a subclass of <a href="https://www.w3.org/2005/Incubator/ssn/ssnx/ssn#System">oldssn:System</a> and <a href="https://www.w3.org/2005/Incubator/ssn/ssnx/ssn#Platform">oldssn:Platform</a>. Unfortunately, a device class, as such, does not exist in <strong>SSN/SOSA</strong>, and introduction of <a href="#iiot-IoTDevice">iiot:IoTDevice</a> is a rectification of that fact.
+</p>
+
+	<figure id="img_mod_device">
+	   <img src="img/module_device.png" alt="GOIoTP device module">
+	   <figcaption>GOIoTP device module.</figcaption>
+	</figure>
+
+<p>
+	Most important entities of the Device module:
+	<div class="azlist">
+		<p>
+			<a href="#iiot-IoTDevice">iiot:IoTDevice</a>,
+			<a href="#ssn-System">ssn:System</a>,
+			<a href="#sosa-Sensor">sosa:Sensor</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator" target="_blank">sosa:Actuator</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SSNhasSubSystem" target="_blank">ssn:hasSubSystem</a>
+		</p>
+	</div>
+</p>
+
+</section>
+
+<section id="mod_platform">
+	<h2>Platform module</h2>
+<p>
+The platform module extends the <strong>SOSA</strong> <a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform">sosa:Platform</a> description and defines a new class of <a href="#iiot-SoftwarePlatform">iiot:SoftwarePlatform</a>. Platforms in <strong>GOIoTP</strong> can have explicitly defined semantics, asserted via the <a href="#iiot-hasSemantics">iiot:hasSemantics</a> property, with the range including instances of <a href="#iiot-Semantics">iiot:Semantics</a>, or its subclass <a href="#iiot-Ontology">iiot:Ontology</a>. The <a href="#iiot-hasSemantics">iiot:hasSemantics</a> property and <a href="#iiot-Semantics">iiot:Semantics</a> class are meant to store descriptions of any kind of semantics (ontology, vocabluary, etc.) that is used, implemented, or supported by the platform. It is used in <strong>INTER-IoT</strong> to handle information relevant to semantic interoperability, and to know if two platforms are semantically compatible, or if they need to be aligned. Although, technically, an instance of <a href="#iiot-Ontology">iiot:Ontology</a> can also have the type of owl:Ontology, it is discouraged. A <a href="#iiot-Ontology">iiot:Ontology</a> may have additional annotations that are relevant in context of an interoperability system. Using owl:Ontology instead would complicate knowledge management, because one would always have to remember that the annotations about a well-known owl:Ontology are most probably non-authoritative i.e. the user making such annotations is not authorized to provide official information about the particular instance of an owl:Ontology. If one instead uses <a href="#iiot-Ontology">iiot:Ontology</a> as description of semantics for a <a href="#iiot-SoftwarePlatform">iiot:SoftwarePlatform</a>, then they are in "full control" over any extra annotations.
+</p>
+<p>
+A <a href="#iiot-SoftwarePlatform">iiot:SoftwarePlatform</a> has components (instances of <a href="#iiot-PlatformComponent">iiot:PlatformComponent</a>, or its subclass <a href="#iiot-Middleware">iiot:Middleware</a>), akin to subsystems of <a href="https://www.w3.org/TR/vocab-ssn/#SSNSystem">ssn:System</a>. <strong>GOIoTPex</strong> defines a collection of subclasses of <a href="#iiot-Middleware">iiot:Middleware</a> that represent IoT middleware software used in INTER-IoT demo and pilot implementations, e.g. <a href="#iiotex-FIWARE">iiotex:FIWARE</a>, <a href="#iiotex-WSO2">iiotex:WSO2</a>, or <a href="#iiotex-UniversAAL">iiotex:UniversAAL</a>. The <strong>GOIoTPex</strong> taxonomy of middlewares does not presume to represent an exhaustive list of most prevalent IoT platforms, and may be extended in the future.
+</p>
+<p>
+The platform module and the device module are connected via the <a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform">sosa:Platform</a>, which is a superclass to both <a href="#iiot-IoTDevice">iiot:IoTDevice</a> and <a href="#iiot-SoftwarePlatform">iiot:SoftwarePlatform</a>.<!-- Also, note that platform components are subclasses of <a href="https://www.w3.org/TR/vocab-ssn/#SSNSystem">ssn:System</a>-->
+</p>
+
+	<figure id="img_mod_platform">
+	   <img src="img/module_platform.png" alt="GOIoTP platform module">
+	   <figcaption>GOIoTP platform module.</figcaption>
+	</figure>
+
+<p>
+	Most important entities of the Platform module:
+	<div class="azlist">
+		<p>
+			<a href="#sosa-Platform">sosa:Platform</a>,
+			<a href="#iiot-SoftwarePlatform">iiot:SoftwarePlatform</a>,
+			<a href="#iiot-PlatformComponent">iiot:PlatformComponent</a>,
+			<a href="#iiot-Middleware">iiot:Middleware</a>,
+			<a href="#iiot-Semantics">iiot:Semantics</a>,
+			<a href="#iiot-Ontology">iiot:Ontology</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAhosts" target="_blank">sosa:hosts</a>,
+			<a href="#iiot-hasComponent">iiot:hasComponent</a>,
+			<a href="#iiot-hasBaseEndpoint">iiot:hasBaseEndpoint</a>,
+			<a href="#iiot-hasSemantics">iiot:hasSemantics</a>
+		</p>
+	</div>
+</p>
+
+</section>
+
+<section id="mod_observation">
+	<h2>Observation and actuation module</h2>
+<p>
+Observation and actuation module defines data structures that represent information which is either gathered by a sensor, or produced by an actuator, with the intention to act on the world. Instances of both <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuation">sosa:Actuation</a> and <a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservation">sosa:Observation</a> can be connected with an instance of a <a href="https://www.w3.org/TR/vocab-ssn/#SOSAResult">sosa:Result</a>, which is the entity that holds the information most relevant to sensing or actuation. <strong>GOIoTP</strong> extends the <strong>SSN/SOSA</strong> model of results by defining the <a href="#iiot-hasResultValue">iiot:hasResultValue</a> property that holds the literal value of the observation or actuation.
+</p>
+<p>
+In GOIoTP a single observation (or actuation) may have more than one result. This is done to account for the fact that some results of observations may be connected and may make sense only in the context of each other. For instance a blood pressure measurement that produces information about systolic and diastolic blood pressure of a patient would be modeled in GOIoTP as a single observation with multiple results.
+</p>
+<p>
+The <strong>SSN/SOSA</strong> model of observations, actuations and results is itself quite verbose, as it includes information about time, observed (or acted upon) properties and features of interest, and is well connected to the device module of <strong>SSN/SOSA</strong>. Because of that the observation and actuation module of <strong>GOIoTP</strong> does not introduce much new information or changes into it. Note, however, that other <strong>GOIoTP</strong> modules i.e. location, user, and units offer additional properties that enhance observations, actuations and results (see further subsections in this chapter for details). As stated before, in our opinion <strong>GOIoTP</strong> modules work best when all of them are utilized, and the ontology itself should be used as a whole, as opposed to selecting single modules.
+</p>
+<p>
+The observation and actuation module is attached to the device module by the <a href="https://www.w3.org/TR/vocab-ssn/#SOSAMadeActuation">sosa:madeActuation</a> and <a href="https://www.w3.org/TR/vocab-ssn/#SOSAMadeObservation">sosa:madeObservation</a> for <a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuator">sosa:Actuator</a>s and <a href="https://www.w3.org/TR/vocab-ssn/#SOSASensor">sosa:Sensor</a>s respectively.
+</p>
+
+	<figure id="img_mod_observation">
+	   <img src="img/module_observation.png" alt="GOIoTP observation module">
+	   <figcaption>GOIoTP observation and actuation module.</figcaption>
+	</figure>
+
+<p>
+	Most important entities of the Observation and actuation module:
+	<div class="azlist">
+		<p>
+			<a href="#sosa-Actuation">sosa:Actuation</a>,
+			<a href="#sosa-Observation">sosa:Observation</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAActuatableProperty" target="_blank">sosa:ActuatableProperty</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAObservableProperty" target="_blank">sosa:ObservableProperty</a>,
+			<a href="#sosa-FeatureOfInterest">sosa:FeatureOfInterest</a>,
+			<a href="#sosa-Result">sosa:Result</a>,
+
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAhasFeatureOfInterest" target="_blank">sosa:hasFeatureOfInterest</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAmadeByActuator" target="_blank">sosa:madeByActuator</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAmadeActuation" target="_blank">sosa:madeActuation</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAactsOnProperty" target="_blank">sosa:actsOnProperty</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAobservedProperty" target="_blank">sosa:observedProperty</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAmadeBySensor" target="_blank">sosa:madeBySensor</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAmadeObservation" target="_blank">sosa:madeObservation</a>,
+			<a href="#sosa-phenomenonTime">sosa:phenomenonTime</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAresultTime" target="_blank">sosa:resultTime</a>,
+			<a href="https://www.w3.org/TR/vocab-ssn/#SOSAhasResult" target="_blank">sosa:hasResult</a>,
+			<a href="#iiot-hasResultValue">iiot:hasResultValue</a>
+		</p>
+	</div>
+</p>
+
+</section>
+
+<section id="mod_units">
+	<h2>Units and measurements module</h2>
+<p>
+The units and measurements module makes use of the class of <a href="https://sweet.jpl.nasa.gov/">sweet_units:Unit</a> to attach information about unit of measurement to instances of <a href="https://www.w3.org/TR/vocab-ssn/#SOSAResult">sosa:Result</a> (from the observations module). This is a very simple, but also much needed information that puts a valuable context on the value of any <a href="https://www.w3.org/TR/vocab-ssn/#SOSAResult">sosa:Result</a>. The class of <a href="#iiot-MeasurementKind">iiot:MeasurementKind</a> subclasses <a href="https://www.w3.org/TR/vocab-ssn/#SSNProperty">ssn:Property</a> and its instances are intended to store information about the kind, or type, of measurement or unit (e.g. mass, length, etc).
+</p>
+<p>
+The generic model of <strong>GOIoTP</strong> allows for any system of units to be used under <a href="https://sweet.jpl.nasa.gov/">sweet_units:Unit</a> and <a href="#iiot-MeasurementKind">iiot:MeasurementKind</a>. <strong>GOIoTPex</strong> implements this idea by utilizing a full suite of units and measurement kinds from both the SI system in general, and the SI units defined in <strong>SWEET Units</strong> ontology. Subclasses of <a href="#iiot-MeasurementKind">iiot:MeasurementKind</a> are defined, such as <a href="#iiotex-Volume">iiotex:Volume</a>, <a href="#iiotex-Mass">iiotex:Mass</a>, <a href="#iiotex-Luminance">iiotex:Luminance</a> and many others; and organized under a basic SI taxonomy (e.g. <a href="#iiotex-SIBaseMK">iiotex:SIBaseMK</a> for base SI units, <a href="#iiotex-SIDerivedMK">iiotex:SIDerivedMK</a> for derived units and so on). Instances that represent concrete SI units, such as <a href="https://sweet.jpl.nasa.gov/">sweet_units:kilogram</a>, or <a href="https://sweet.jpl.nasa.gov/">sweet_units:ampere</a> are also included in <strong>GOIoTPex</strong> under the taxonomy defined in <strong>SWEET Units</strong> ontology.
+</p>
+	<figure id="img_mod_units">
+	   <img src="img/module_units.png" alt="GOIoTP units and measurements module">
+	   <figcaption>GOIoTP units and measurements module.</figcaption>
+	</figure>
+
+<p>
+	Most important entities of the Units module:
+	<div class="azlist">
+		<p>
+
+			<a href="https://sweet.jpl.nasa.gov/" target="_blank">sweet_units:Unit</a>,
+			<a href="https://sweet.jpl.nasa.gov/" target="_blank">sweet_units:BaseUnit</a>,
+			<a href="https://sweet.jpl.nasa.gov/" target="_blank">sweet_units:ComplexUnit</a>,
+			<a href="#iiot-MeasurementKind">iiot:MeasurementKind</a>,
+			<a href="#ssn-Property">ssn:Property</a>,
+			<a href="#iiotex-SIBaseMK">iiotex:SIBaseMK</a>,
+			<a href="#iiotex-SIDerivedMK">iiotex:SIDerivedMK</a>,
+			<a href="#iiotex-SIDerivedSpecialMK">iiotex:SIDerivedSpecialMK</a>,
+			<a href="#iiotex-SIDerivedSpecialInclusiveMK">iiotex:SIDerivedSpecialInclusiveMK</a>,
+			<a href="#iiot-hasUnit">iiot:hasUnit</a>
+		</p>
+	</div>
+</p>
+
+</section>
+
+<section id="mod_location">
+	<h2>Location module</h2>
+<p>
+The geolocation module proposes a model centered around the class of <a href="#iiot-Location">iiot:Location</a>, which describes any physical location, such as a building, a specific room, or a city. The geographical coordinates are attached to a <a href="#iiot-Location">iiot:Location</a> with the <a href="http://www.opengeospatial.org/standards/geosparql">geosparql:asWKT</a> property, whose value is a <a href="http://www.opengeospatial.org/standards/geosparql">geosparql:wtkLiteral</a> (WKT stands for ``well known text''). WKT is a string format that allows declaration of geographical points (e.g. "POINT[31.2543139, -24.2584805]"), lines and areas bounded by many different shapes. Although WKT also allows for textual descriptions, like "AREA['Netherlands offshore.']", they are optional, and we recommend to put any textual information relevant to ontological entities in annotation properties, as opposed to the value of the <a href="http://www.opengeospatial.org/standards/geosparql">geosparql:asWKT</a> property. WKT also allows for definition of (optional) "vertical extent" i.e. a height range, and even a temporal extent i.e. a time range over which the geoposition is relevant. Because of how complicated a WKT description can become, we advise that the way in which it is actually used is explicitly documented, when using <strong>GOIoTP</strong>. For instance, if a software system only parses geopositional information, without any additional information (i.e. the optional textual, temporal and vertical descriptions), it should be made clear in the documentation. More information about <a href="http://www.opengeospatial.org/standards/geosparql">GeoSPARQL</a> and <a href="http://www.opengeospatial.org/standards/wkt-crs">WKT</a> is available in their respective online documentations.
+</p>
+<p>
+<strong>GOIoTP</strong> does not define any other location-specific properties, such as address, or country code information. The geolocation module connects to device, observation and platform modules through <a href="#iiot-hasLocation">iiot:hasLocation<a href="#iiot-hasLocation"> and <a href="#iiot-hasCoverage">iiot:hasCoverage</a> properties, applicable to <a href="https://www.w3.org/TR/vocab-ssn/#SOSAResult">sosa:Result</a>, <a href="https://www.w3.org/TR/vocab-ssn/#SOSASystem">ssn:System</a> and <a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform">sosa:Platform</a>. The first property informs about a physical location of an entity, while the latter defines a point, or an area inside which the functionalities or capabilities of an entity are offered. For instance, a temperature sensor that covers a whole room (<a href="#iiot-hasCoverage">iiot:hasCoverage</a>) can be placed in one specific corner of that room (<a href="#iiot-hasLocation">iiot:hasLocation</a>). Note that the value of both properties is a <a href="#iiot-Location">iiot:Location</a>, so the <a href="#iiot-hasLocation">iiot:hasLocation</a> property value is not limited to a description of a point, and may be use any allowed <a href="http://www.opengeospatial.org/standards/geosparql">geosparql:asWKT</a> value, including an area. In such cases the property informs about an approximate location (e.g. an entity in a building), as opposed to a precise point.
+</p>
+	<figure id="img_mod_location">
+	   <img src="img/module_geolocation.png" alt="GOIoTP location module">
+	   <figcaption>GOIoTP service module.</figcaption>
+	</figure>
+
+<p>
+	Most important entities of the Location module:
+	<div class="azlist">
+		<p>
+			<a href="#iiot-Location">iiot:Location</a>,
+			<a href="#iiot-hasLocation">iiot:hasLocation</a>,
+			<a href="#iiot-hasCoverage">iiot:hasCoverage</a>,
+			<a href="http://www.opengeospatial.org/standards/geosparql">geosparql:asWKT</a>
+		</p>
+	</div>
+</p>
+</section>
+
+<section id="mod_service">
+	<h2>Service module</h2>
+<p>
+The service module offers a model for services offered by platforms, or smart devices. An instance of a <a href="#iiot-Service">iiot:Service</a> (which can be offered by any <a href="https://www.w3.org/TR/vocab-ssn/#SOSAPlatform">sosa:Platform</a>, including <a href="#iiot-IoTDevice">iiot:IoTDevice</a> and <a href="#iiot-SoftwarePlatform">iiot:SoftwarePlatform</a>) has an interface (i.e. <a href="#iiot-ServiceInterface">iiot:ServiceInterface</a>). The interface, is a description of a way of accessing the service, with a formal definition via <a href="#iiot-hasServiceDefinition">iiot:hasServiceDefinition</a> (e.g. a WSDL file), an input (<a href="#iiot-ServiceInput">iiot:ServiceInput</a>) with an URL endpoint (at which the service is accessed), and an output (<a href="#iiot-ServiceOutput">iiot:ServiceOutput</a>). Both <a href="#iiot-ServiceInput">iiot:ServiceInput</a> and <a href="#iiot-ServiceInput">iiot:ServiceInput</a> can specify a <a href="#iiot-DataFormat">iiot:DataFormat</a> - for instance JSON.
+</p>
+<p>
+<strong>GOIoTPex</strong> defines subclasses and instances for the service module. It offers specific subclasses of <a href="#iiot-Service">iiot:Service</a>, such as <a href="#iiotex-CEPWebService">iiotex:CEPWebService</a> for complex event processing webservices; subclasses of <a href="#iiot-ServiceInterface">iiot:ServiceInterface</a> such as <a href="#iiotex-REST">iiotex:REST</a>, and subclasses of <a href="#iiot-DataFormat">iiot:DataFormat</a>, e.g. <a href="#iiotex-JSON">iiotex:JSON</a>. Very specific data formats, such as FIWARE NGSIv2 JSON are included in GOIoTPex as instances (e.g. <a href="#iiotex-NGSIv2JSON">iiotex:NGSIv2JSON</a>).
+</p>
+<p>
+The service module connects to the platform module through the capability of platforms to offer services via the <a href="#iiot-offersService">iiot:offersService</a> property.
+</p>
+	<figure id="img_mod_service">
+	   <img src="img/module_service.png" alt="GOIoTP service module">
+	   <figcaption>GOIoTP service module.</figcaption>
+	</figure>
+
+<p>
+	Most important entities of the Service module:
+	<div class="azlist">
+		<p>
+			<a href="#iiot-Service">iiot:Service</a>,
+			<a href="#iiot-ServiceInterface">iiot:ServiceInterface</a>,
+			<a href="#iiot-ServiceInput">iiot:ServiceInput</a>,
+			<a href="#iiot-ServiceOutput">iiot:ServiceOutput</a>,
+			<a href="#iiot-DataFormat">iiot:DataFormat</a>,
+			<a href="#sosa-Procedure">sosa:Procedure</a>,
+			<a href="#iiot-offersService">iiot:offersService</a>,
+			<a href="#iiot-hasServiceInterface">iiot:hasServiceInterface</a>,
+			<a href="#iiot-hasServiceDefinition">iiot:hasServiceDefinition</a>,
+			<a href="#iiot-hasServiceInput">iiot:hasServiceInput</a>,
+			<a href="#iiot-hasServiceOutput">iiot:hasServiceOutput</a>,
+			<a href="#iiot-hasDataFormat">iiot:hasDataFormat</a>,
+			<a href="#ssn-implements">ssn:implements</a>
+		</p>
+	</div>
+</p>
+
+</section>
+
+<section id="mod_user">
+	<h2>User module</h2>
+<p>
+The user module is centered around the <a href="#iiot-User">iiot:User</a> class that is a subclass of the <a href="https://www.w3.org/TR/vocab-ssn/#SOSAFeatureOfInterest">sosa:FeatureOfInterest</a> class. It describes human or software that uses, or is a client in the context of an IoT system.
+</p>
+<p>
+The user module connects to the device, observation, services and platform modules via <a href="#iiot-hasUser">iiot:hasUser</a> and <a href="#iiot-orderedByUser">iiot:orderedByUser</a> properties. The <a href="#iiot-hasUser">iiot:hasUser</a> is a generic connection between a user and an entity. When a device has a user, it means that its capabilities or functionalities are being used by a particular user. This property is very general in meaning and GOIoTP does not put many constraints on the way it is meant to be used. The <a href="#iiot-orderedByUser">iiot:orderedByUser</a> property, on the other hand, describes that an observation or actuation was ordered to be done by a user. It can be used, for example, to inform that a particular doctor ordered a measurement of patients blood pressure, or that a software agent decided that an actuation needs to be performed by a smart gate sensor, in order to close the gate.
+</p>
+<p>
+Because of the connection to <strong>SSN/SOSA</strong> <a href="#iiot-User">iiot:User</a> can be used like any other <a href="https://www.w3.org/TR/vocab-ssn/#SOSAFeatureOfInterest">sosa:FeatureOfInterest</a> to connect users to observations, or actuations (e.g. to say that an observation was made about a users <a href="https://www.w3.org/TR/vocab-ssn/#SSNProperty">ssn:Property</a>).
+</p>
+<p>
+<strong>GOIoTPex</strong> extends the user module with a very simple subclass of <a href="https://www.w3.org/TR/vocab-ssn/#SSNProperty">ssn:Property</a>, namely <a href="#iiotex-AuthenticationData">iiotex:AuthenticationData</a>. Instances of this class are meant to store information known to the user and required to access some system or platform, for instance, a password and login pair. <strong>GOIoTPex</strong> does not place any restrictions on <a href="#iiotex-AuthenticationData">iiotex:AuthenticationData</a> (e.g. passwords can be plain-text, encrypted, or not required/present at all), so it needs to be extended before usage.
+</p>
+<p>
+Note that although <a href="#iiot-User">iiot:User</a>s can be human, <strong>GOIoTP</strong> does not define properties that would usually be attached to a human user, such as first and last name, age, nationality, address of residence, and so on. If such properties are required, we recommend using well-known and standardized vocabularies, such as <a href="http://schema.org">schema.org</a>.
+</p>
+	<figure id="img_mod_user">
+	   <img src="img/module_user.png" alt="GOIoTP user module">
+	   <figcaption>GOIoTP user module.</figcaption>
+	</figure>
+
+<p>
+	Most important entities of the User module:
+	<div class="azlist">
+		<p>
+			<a href="#iiot-User">iiot:User</a>,
+			<a href="#iiotex-AuthenticationData">iiotex:AuthenticationData</a>,
+			<a href="#iiot-hasUser">iiot:hasUser</a>,
+			<a href="#iiot-orderedByUser">iiot:orderedByUser</a>,
+			<a href="#iiotex-hasLocalID">iiotex:hasLocalID</a>
+
+		</p>
+	</div>
+</p>
+
+</section>
+
+<section id="mod_provenance">
+	<h2>A note about provenance</h2>
+<p>
+<strong>GOIoTP</strong> does not define its own dedicated provenance classes or properties, instead reusing select few from existing ontologies. <a href="http://dublincore.org/documents/dces/">Dublin Core</a> properties are used to annotate the ontology itself (e.g. <a href="http://dublincore.org/documents/dcmi-terms/#elements-creator">dc:creator</a>). We recommend Dublin Core for annotating the basic provenance information. If a more complex provenance description is needed, we recommend the <a href="https://www.w3.org/TR/prov-o/"><strong>PROV-O</strong></a> ontology. It defines a very robust provenance model, and has an official alignment to <strong>SSN/SOSA</strong> available <a href="https://www.w3.org/TR/vocab-ssn/#PROV_Alignment">online</a>, so it can be easily used with <strong>GOIoTP</strong>. In our experience, the <strong>PROV-O</strong> model offers a model that is simply too verbose for a general IoT use-case, so we did not explicitly include it in our ontology.
+</p>
+<p>
+<strong>GOIoTPex</strong> defines only one provenance-like property <a href="#iiotex-hasLocalID">iiotex:hasLocalID</a>. Applicable to any <a href="#iiot-User">iiot:User</a> or <a href="#iiot-IoTDevice">iiot:IoTDevice</a> this property stores information about identifiers that are valid within some local system, but not necessarily globally unique. This property is of particular significance to <strong>INTER-IoT</strong>, and possibly other interoperability systems. <strong>INTER-IoT</strong> on the middleware level, and higher levels of interoperability, manages entities (devices in particular) that come from different systems (middlewares), and already have an identity within those systems. In order to preserve uniqueness of identifiers <strong>INTER-IoT</strong> uses its own RDF URI-based identification system. The <a href="#iiotex-hasLocalID">iiotex:hasLocalID</a> property lets platforms that use INTER-MW (INTER-IoT middleware interoperability software) attach information about their local identifier, without the need to change its own internal (i.e. local) identification scheme to suit INTER-IoT. Instead, this information is treated as something relevant only in the scope of a particular identifier system, and not as a globally unique identifier.
+</p>
+
+</section>
+
+</section>
+
+
+
+<!--
+
+The change (i.e. update) to the newest version of SSN/SOSA had major consequences. The addition of actuation in SSN/SOSA meant that we could remove some ontology imports, such as iot-lite, that were used to provide that functionality before. The iot-lite geolocation and services classes were substituted with our own modules. The Service module was custom built after analysis of existing ontologies, and GeoSPARQL was introduced to the geolocation module. The new observation module of SSN/SOSA fit much better into INTER-IoT meta-data model requirements, so it was fully adopted, with only a minor extension. Detailed information about GOIoTP and GOIoTPex modules can be found in further sections of this document. The difference between SSN/SOSA and the old version of SSN, called SSNX, is well documented online\footnote{\url{https://www.w3.org/TR/vocab-ssn/\#&Developments}}.\\
+
+To sum up the introduced changes resulted in a great simplification of import structure for GOIoTP, and it currently only imports (directly) SSN/SOSA, and (indirectly) its imports (e.g. the time ontology\footnote{\url{https://www.w3.org/TR/owl-time/}}). It also uses entities from GeoSPARQL\footnote{\url{http://www.opengis.net/ont/geosparql}} and SWEET Units\footnote{\url{http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl}} ontologies. Required modules, that were previously offered by removed imports, were substituted with our own custom modules.\\
+
+--------------------
+
+Generic Ontology for IoT Platforms (GOIoTP) is at the same time the INTER-IoT reference meta-data model and a core ontology for IoT. It is extended by GOIoTPex that augments and ``annexes'' GOIoTP with concrete entities. The two ontologies together offer a meta-data model for any IoT application, with GOIoTP being the extensible core ontology, and GOIoTPex offering useful extensions, while still preserving a level of generality. Both ontologies are designed to be modular and, although it is formally correct to support, for instance, GOIoTP without the location module, we recommend that the ontology is treated as a whole, and to view the modules as conceptual division, rather than a formal one. The GOIoTPex data model is implemented in INTER-MW, and also, to some extent, used by other INTER-IoT components.
+
+In principle, the entities defined in GOIoTPex extend and instantiate those defined in GOIoTP. For instance, while GOIoTP defines a class for data formats, namely \emph{iiot:DataFormat}, it does not define any specific formats. GOIoTP extends this concept by defining both subclasses like \emph{iiotex:JSON}, and instances of those subclasses, e.g. \emph{iiotex:NGSIv2JSON}. In this way the general classes of GOIoTP can be used in a wider area, that the more specific GOIoTP entities. On the other hand, GOIoTPex offers convenient collection of classes, instances and properties for general use, and as a reference of extension of GOIoTP.
+
+Note that because GOIoTPex extends GOIoTP, the compliance, inclusion or implementation of GOIoTPex necessarily includes \REPL{GOIoTPex}{GOIoTP}. In other words, in this text we assume that using GOIoTPex implies also using GOIoTP. In this way, GOIoTP is a vertical module of GOIoTPex.
+
+In the following sections the contents of INTER-IoT ontologies is described, and relation between GOIoTP and GOIoTPex clarified. For brevity, full URIs are not used in the text, or in the images in this section. The prefixes for all used ontologies can be found in section \ref{sec4:goiotp:prefixes}. The usage of GOIoTP and GOIoTPex in INTER-IoT is described in section \ref{sec:relationships} of this document, and in D3.2.
+
+
+%As described in D4.1 the INTER-IoT reference meta-data model is proposed in the form of an OWL ontology. The INTER-IoT ontology named GOIoTP (Generic Ontology for IoT Platforms) was engineered to fulfill the requirements stated by INTER-IoT, but also to offer a core ontology for any artifact in the IoT domain. While reusing existing standardized and established ontologies used in IoT, GOIoTP also proposes its own extensions, in order to provide a complete, modular ontology, useful in a wide range of IoT use cases.
+%\\\\
+%Because GOIoTP is a core ontology, it defines some stub classes -- i.e. classes that do not have a robust definition, or subclasses. This is a design decision intended to enable different extensions, for those stub concepts, depending on particular needs of an implementation, and follows the usual design patterns for top-level ontologies. Other than offering less restrictions on implementers, stub classes are also easier to align to and from other core IoT ontologies.
+%\\\\
+%In order to offer a more complete interoperability solution, we have also defined an extension to GOIoTP that expands the definitions and subclass structure for the stub classes. GOIoTPex (GOIoTP extended) is the multi-module ontology that extends the reference model of GOIoTP with concrete entities. It completes GOIoTP and is suitable for scenarios, in which INTER-IoT user does not have any preference, when it comes to the data model used internally by INTER-IoT components, i.e. when the user is looking for a complete modeling solution.
+
+
+%"GOIoTP defines Stub classes for ... . Some of the stub classes are subclassed and extended with property restrictions in GOIoTPex"
+
+The overview of GOIoTP modular structure is available in Figure \ref{fig:goiotp_modules1}. GOIoTPex extends only select modules of its base ontology. In what follows, each module has a subsection with a description and a diagram. The key for the module diagrams is in Figure \ref{fig:goiotp_key}. Note that the diagrams depict only the elements that are most important for a given module. Refer to the ontology files themselves for a full information. In particular, GOIoTP defines a couple of properties that are not specific to any module, such as \emph{iiot:hasName} and \emph{iiot:hasDescription} meant to contain human-readable text, with which any GOIoTP entity can be annotated. To improve clarity, such properties, including some SSN/SOSA properties, are not included in the diagrams, unless they have a particular importance for a given module.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{img/goiotp/key.png}
+		\caption{GOIoTP module diagrams key.}
+				\label{fig:goiotp_key}
+	\end{center}
+\end{figure}
+
+\subsubsection{Imported ontologies}
+
+The only direct imports of GOIoTP are SSN and SOSA. Additionally, GOIoTPex imports GOIoTP. Entities from other ontologies are also used, but, because those are cherry-picked, we do not import the whole ontologies. This is also done to avoid long import chains that would slow down any ontology explorer, editor, or triplestore that loads all ontology imports in a chain. Those properties are specifically from GeoSPARQL\footnote{\url{http://www.opengis.net/ont/geosparql}} and SWEET Units\footnote{\url{http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl}} (Semantic Web for Earth and Environment Technology\footnote{\url{https://sweet.jpl.nasa.gov/}}) ontologies, and other ontologies or namespaces accompanying those two (for instance geographical functions\footnote{\url{http://www.opengis.net/def/function/geosparql/}}, or mathematical relations\footnote{\url{http://sweet.jpl.nasa.gov/2.3/relaMath.owl}}). Entities used in similar fashion by SSN/SOSA come from the Time\footnote{\url{http://www.w3.org/2006/time}} ontology.
+
+-->
+
+<section id="axiomization">
+	<h2>Axiomization</h2>
+	This section contrains descriptions of new entities introduced in <strong>GOIoTP</strong> or <strong>GOIoTPex</strong>. Additionally section <a href="#additional-axiomization"></a> describes entities that come from other ontologies, but are used by, or have additional axioms attached in <strong>INTER-IoT</strong> ontologies.
+	<section>
+		<h2>GOIoTP Classes</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONStrict" data-include="js/ontology_entities.json#iiot:Class"></div>
+	</section>
+	<section>
+		<h2>GOIoTPex Classes</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONStrict" data-include="js/ontology_entities.json#iiotex:Class"></div>
+	</section>
+	<section>
+		<h2>GOIoTP Object Properties</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONStrict" data-include="js/ontology_entities.json#iiot:ObjectProperty"></div>
+	</section>
+	<section>
+		<h2>GOIoTPex Object Properties</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONStrict" data-include="js/ontology_entities.json#iiotex:ObjectProperty"></div>
+	</section>
+	<section>
+		<h2>GOIoTP Data Properties</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONStrict" data-include="js/ontology_entities.json#iiot:DataProperty"></div>
+	</section>
+	<section>
+		<h2>GOIoTPex Data Properties</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONStrict" data-include="js/ontology_entities.json#iiotex:DataProperty"></div>
+	</section>
+	<section>
+		<h2>GOIoTP Individuals</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONStrict" data-include="js/ontology_entities.json#iiot:NamedIndividual"></div>
+	</section>
+	<section>
+		<h2>GOIoTPex Individuals</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONStrict" data-include="js/ontology_entities.json#iiotex:NamedIndividual"></div>
+	</section>
+</section>
+
+<section id="additional-axiomization">
+	<h2>Additional Axiomization</h2>
+	This section contrains descriptions of entities that are used in <strong>GOIoTP</strong> or <strong>GOIoTPex</strong> ontologies, that optionally have additional axioms attached to them. For more detailed descriptions, please refer to the documentation files of the ontologies of origin, for each entity. Section <a href="#axiomization"></a> contains descriptions of new entities introduced in <strong>GOIoTP</strong> or <strong>GOIoTPex</strong>.
+
+	<section>
+		<h2>GOIoTP Classes</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONNonStrict" data-include="js/ontology_entities.json#iiot:Class"></div>
+	</section>
+	<section>
+		<h2>GOIoTPex Classes</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONNonStrict" data-include="js/ontology_entities.json#iiotex:Class"></div>
+	</section>
+	<section>
+		<h2>GOIoTP Object Properties</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONNonStrict" data-include="js/ontology_entities.json#iiot:ObjectProperty"></div>
+	</section>
+	<section>
+		<h2>GOIoTPex Object Properties</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONNonStrict" data-include="js/ontology_entities.json#iiotex:ObjectProperty"></div>
+	</section>
+	<section>
+		<h2>GOIoTP Data Properties</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONNonStrict" data-include="js/ontology_entities.json#iiot:DataProperty"></div>
+	</section>
+	<section>
+		<h2>GOIoTPex Data Properties</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONNonStrict" data-include="js/ontology_entities.json#iiotex:DataProperty"></div>
+	</section>
+	<section>
+		<h2>GOIoTP Individuals</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONNonStrict" data-include="js/ontology_entities.json#iiot:NamedIndividual"></div>
+	</section>
+	<section>
+		<h2>GOIoTPex Individuals</h2>
+		<div data-include-replace=true data-oninclude="generateEntitiesSectionsFromJSONNonStrict" data-include="js/ontology_entities.json#iiotex:NamedIndividual"></div>
+	</section>
+
+</section>
+
+<section>
+	<h2>Turtle axiomization</h2>
+	This section contains excerpts from the <strong>GOIoTP</strong> and <strong>GOIoTPex</strong> ontologies, in Turtle format.
+	<section>
+		<h2>GOIoTP Classes</h2>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-DataFormat" data-include="owl/GOIoTP.ttl#iiot:DataFormat"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-DomainOfInterest" data-include="owl/GOIoTP.ttl#iiot:DomainOfInterest"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-IoTDevice" data-include="owl/GOIoTP.ttl#iiot:IoTDevice"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-Location" data-include="owl/GOIoTP.ttl#iiot:Location"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-MeasurementKind" data-include="owl/GOIoTP.ttl#iiot:MeasurementKind"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-Middleware" data-include="owl/GOIoTP.ttl#iiot:Middleware"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-Ontology" data-include="owl/GOIoTP.ttl#iiot:Ontology"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-PlatformComponent" data-include="owl/GOIoTP.ttl#iiot:PlatformComponent"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-Semantics" data-include="owl/GOIoTP.ttl#iiot:Semantics"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-Service" data-include="owl/GOIoTP.ttl#iiot:Service"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-ServiceInput" data-include="owl/GOIoTP.ttl#iiot:ServiceInput"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-ServiceInterface" data-include="owl/GOIoTP.ttl#iiot:ServiceInterface"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-ServiceOutput" data-include="owl/GOIoTP.ttl#iiot:ServiceOutput"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-SoftwarePlatform" data-include="owl/GOIoTP.ttl#iiot:SoftwarePlatform"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-User" data-include="owl/GOIoTP.ttl#iiot:User"></section>
+	<!--
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasServiceDefinition" data-include="owl/GOIoTP.ttl#iiot:hasServiceDefinition">
+		</section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-IoTDevice" data-include="owl/GOIoTP.ttl#iiot:IoTDevice">
+		</section>
+		<section data-oninclude="extractOWLContentFromJSON" data-include="scripts/ontology_entities.json#iiot:jsonTest">
+		</section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasServiceDefinition" data-include="owl/GOIoTP.ttl#iiot:hasServiceDefinition">
+		</section>
+	-->
+	</section>
+	<section>
+		<h2>GOIoTPex Classes</h2>
+
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-AbsorbedDoseRate" data-include="owl/GOIoTPex.ttl#iiotex:AbsorbedDoseRate"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Acceleration" data-include="owl/GOIoTPex.ttl#iiotex:Acceleration"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ActivityOfRadionuclide" data-include="owl/GOIoTPex.ttl#iiotex:ActivityOfRadionuclide"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-AmountOfSubstance" data-include="owl/GOIoTPex.ttl#iiotex:AmountOfSubstance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-AmountOfSubstanceConcentration" data-include="owl/GOIoTPex.ttl#iiotex:AmountOfSubstanceConcentration"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-AngularAcceleration" data-include="owl/GOIoTPex.ttl#iiotex:AngularAcceleration"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-AngularVelocity" data-include="owl/GOIoTPex.ttl#iiotex:AngularVelocity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Area" data-include="owl/GOIoTPex.ttl#iiotex:Area"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-AuthenticationData" data-include="owl/GOIoTPex.ttl#iiotex:AuthenticationData"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Azure" data-include="owl/GOIoTPex.ttl#iiotex:Azure"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-CEPWebService" data-include="owl/GOIoTPex.ttl#iiotex:CEPWebService"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Capacitance" data-include="owl/GOIoTPex.ttl#iiotex:Capacitance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-CatalyticActivity" data-include="owl/GOIoTPex.ttl#iiotex:CatalyticActivity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-CatalyticActivityConcentration" data-include="owl/GOIoTPex.ttl#iiotex:CatalyticActivityConcentration"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-CurrentDensity" data-include="owl/GOIoTPex.ttl#iiotex:CurrentDensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Depth" data-include="owl/GOIoTPex.ttl#iiotex:Depth"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Distance" data-include="owl/GOIoTPex.ttl#iiotex:Distance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-DoseEquivalent" data-include="owl/GOIoTPex.ttl#iiotex:DoseEquivalent"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-DynamicViscosity" data-include="owl/GOIoTPex.ttl#iiotex:DynamicViscosity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-EclipseOM2M" data-include="owl/GOIoTPex.ttl#iiotex:EclipseOM2M"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ElectricCharge" data-include="owl/GOIoTPex.ttl#iiotex:ElectricCharge"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ElectricChargeDensity" data-include="owl/GOIoTPex.ttl#iiotex:ElectricChargeDensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ElectricCurrent" data-include="owl/GOIoTPex.ttl#iiotex:ElectricCurrent"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ElectricFieldStrength" data-include="owl/GOIoTPex.ttl#iiotex:ElectricFieldStrength"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ElectricFluxDensity" data-include="owl/GOIoTPex.ttl#iiotex:ElectricFluxDensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ElectricPotentialDifference" data-include="owl/GOIoTPex.ttl#iiotex:ElectricPotentialDifference"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ElectricResistance" data-include="owl/GOIoTPex.ttl#iiotex:ElectricResistance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Electricconductance" data-include="owl/GOIoTPex.ttl#iiotex:Electricconductance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Energy" data-include="owl/GOIoTPex.ttl#iiotex:Energy"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-EnergyDensity" data-include="owl/GOIoTPex.ttl#iiotex:EnergyDensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-FIWARE" data-include="owl/GOIoTPex.ttl#iiotex:FIWARE"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Force" data-include="owl/GOIoTPex.ttl#iiotex:Force"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Frequency" data-include="owl/GOIoTPex.ttl#iiotex:Frequency"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-HeatCapacity" data-include="owl/GOIoTPex.ttl#iiotex:HeatCapacity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-HeatFluxDensity" data-include="owl/GOIoTPex.ttl#iiotex:HeatFluxDensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Height" data-include="owl/GOIoTPex.ttl#iiotex:Height"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Illuminance" data-include="owl/GOIoTPex.ttl#iiotex:Illuminance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Inductance" data-include="owl/GOIoTPex.ttl#iiotex:Inductance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-JSON" data-include="owl/GOIoTPex.ttl#iiotex:JSON"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-JSON-LD" data-include="owl/GOIoTPex.ttl#iiotex:JSON-LD"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Kerma" data-include="owl/GOIoTPex.ttl#iiotex:Kerma"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Length" data-include="owl/GOIoTPex.ttl#iiotex:Length"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Luminance" data-include="owl/GOIoTPex.ttl#iiotex:Luminance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-LuminousFlux" data-include="owl/GOIoTPex.ttl#iiotex:LuminousFlux"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-LuminousIntensity" data-include="owl/GOIoTPex.ttl#iiotex:LuminousIntensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-MagneticFieldStrength" data-include="owl/GOIoTPex.ttl#iiotex:MagneticFieldStrength"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-MagneticFlux" data-include="owl/GOIoTPex.ttl#iiotex:MagneticFlux"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-MagneticFluxDensity" data-include="owl/GOIoTPex.ttl#iiotex:MagneticFluxDensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Mass" data-include="owl/GOIoTPex.ttl#iiotex:Mass"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-MassDensity" data-include="owl/GOIoTPex.ttl#iiotex:MassDensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-MassFraction" data-include="owl/GOIoTPex.ttl#iiotex:MassFraction"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-MolarEnergy" data-include="owl/GOIoTPex.ttl#iiotex:MolarEnergy"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-MolarEntropy" data-include="owl/GOIoTPex.ttl#iiotex:MolarEntropy"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-MomentOfForce" data-include="owl/GOIoTPex.ttl#iiotex:MomentOfForce"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-OneM2M" data-include="owl/GOIoTPex.ttl#iiotex:OneM2M"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-OpenIoT" data-include="owl/GOIoTPex.ttl#iiotex:OpenIoT"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Permeability" data-include="owl/GOIoTPex.ttl#iiotex:Permeability"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Permittivity" data-include="owl/GOIoTPex.ttl#iiotex:Permittivity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-PlaneAngle" data-include="owl/GOIoTPex.ttl#iiotex:PlaneAngle"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Power" data-include="owl/GOIoTPex.ttl#iiotex:Power"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Pressure" data-include="owl/GOIoTPex.ttl#iiotex:Pressure"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-RDF" data-include="owl/GOIoTPex.ttl#iiotex:RDF"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-REST" data-include="owl/GOIoTPex.ttl#iiotex:REST"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Radiance" data-include="owl/GOIoTPex.ttl#iiotex:Radiance"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-RadiantIntensity" data-include="owl/GOIoTPex.ttl#iiotex:RadiantIntensity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-RayExposure" data-include="owl/GOIoTPex.ttl#iiotex:RayExposure"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SIBaseMK" data-include="owl/GOIoTPex.ttl#iiotex:SIBaseMK"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SIDerivedMK" data-include="owl/GOIoTPex.ttl#iiotex:SIDerivedMK"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SIDerivedSpecialInclusiveMK" data-include="owl/GOIoTPex.ttl#iiotex:SIDerivedSpecialInclusiveMK"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SIDerivedSpecialMK" data-include="owl/GOIoTPex.ttl#iiotex:SIDerivedSpecialMK"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SOAP" data-include="owl/GOIoTPex.ttl#iiotex:SOAP"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SolidAngle" data-include="owl/GOIoTPex.ttl#iiotex:SolidAngle"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SpecificEnergy" data-include="owl/GOIoTPex.ttl#iiotex:SpecificEnergy"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SpecificHeatCapacity" data-include="owl/GOIoTPex.ttl#iiotex:SpecificHeatCapacity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SpecificVolume" data-include="owl/GOIoTPex.ttl#iiotex:SpecificVolume"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-SurfaceTension" data-include="owl/GOIoTPex.ttl#iiotex:SurfaceTension"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Temperature" data-include="owl/GOIoTPex.ttl#iiotex:Temperature"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-ThermalConductivity" data-include="owl/GOIoTPex.ttl#iiotex:ThermalConductivity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Time" data-include="owl/GOIoTPex.ttl#iiotex:Time"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-UniversAAL" data-include="owl/GOIoTPex.ttl#iiotex:UniversAAL"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Velocity" data-include="owl/GOIoTPex.ttl#iiotex:Velocity"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Volume" data-include="owl/GOIoTPex.ttl#iiotex:Volume"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-WSO2" data-include="owl/GOIoTPex.ttl#iiotex:WSO2"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-WaveNumber" data-include="owl/GOIoTPex.ttl#iiotex:WaveNumber"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-WebService" data-include="owl/GOIoTPex.ttl#iiotex:WebService"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-Width" data-include="owl/GOIoTPex.ttl#iiotex:Width"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-XML" data-include="owl/GOIoTPex.ttl#iiotex:XML"></section>
+	</section>
+	<section>
+		<h2>Properties</h2>
+		<section>
+			<h2>GOIoTP Object Properties</h2>
+
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasComponent" data-include="owl/GOIoTP.ttl#iiot:hasComponent"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasCoverage" data-include="owl/GOIoTP.ttl#iiot:hasCoverage"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasDataFormat" data-include="owl/GOIoTP.ttl#iiot:hasDataFormat"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasDomainOfInterest" data-include="owl/GOIoTP.ttl#iiot:hasDomainOfInterest"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasLocation" data-include="owl/GOIoTP.ttl#iiot:hasLocation"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasMeasurementKind" data-include="owl/GOIoTP.ttl#iiot:hasMeasurementKind"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasOwner" data-include="owl/GOIoTP.ttl#iiot:hasOwner"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasSemantics" data-include="owl/GOIoTP.ttl#iiot:hasSemantics"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasServiceInput" data-include="owl/GOIoTP.ttl#iiot:hasServiceInput"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasServiceInterface" data-include="owl/GOIoTP.ttl#iiot:hasServiceInterface"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasServiceOutput" data-include="owl/GOIoTP.ttl#iiot:hasServiceOutput"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasUnit" data-include="owl/GOIoTP.ttl#iiot:hasUnit"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasUser" data-include="owl/GOIoTP.ttl#iiot:hasUser"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-isOwnerOf" data-include="owl/GOIoTP.ttl#iiot:isOwnerOf"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-isUserOf" data-include="owl/GOIoTP.ttl#iiot:isUserOf"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-offersService" data-include="owl/GOIoTP.ttl#iiot:offersService"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-orderedByUser" data-include="owl/GOIoTP.ttl#iiot:orderedByUser"></section>
+		</section>
+
+		<section>
+			<h2>GOIoTPex Object Properties</h2>
+
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-hasAuthenticationData" data-include="owl/GOIoTPex.ttl#iiotex:hasAuthenticationData"></section>
+		</section>
+
+		<section>
+			<h2>GOIoTP Data Properties</h2>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasBaseEndpoint" data-include="owl/GOIoTP.ttl#iiot:hasBaseEndpoint"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasDescription" data-include="owl/GOIoTP.ttl#iiot:hasDescription"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasName" data-include="owl/GOIoTP.ttl#iiot:hasName"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasResultValue" data-include="owl/GOIoTP.ttl#iiot:hasResultValue"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasServiceDefinition" data-include="owl/GOIoTP.ttl#iiot:hasServiceDefinition"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasURI" data-include="owl/GOIoTP.ttl#iiot:hasURI"></section>
+			<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiot-hasVersion" data-include="owl/GOIoTP.ttl#iiot:hasVersion"></section>
+		</section>
+
+		<section>
+			<h2>GOIoTPex Data Properties</h2>
+
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-hasLocalID" data-include="owl/GOIoTPex.ttl#iiotex:hasLocalID"></section>
+		</section>
+
+	</section>
+	<section>
+		<h2>GOIoTPex Individuals</h2>
+
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-NGSIv1JSON" data-include="owl/GOIoTPex.ttl#iiotex:NGSIv1JSON"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-NGSIv2JSON" data-include="owl/GOIoTPex.ttl#iiotex:NGSIv2JSON"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-genericJSON" data-include="owl/GOIoTPex.ttl#iiotex:genericJSON"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-genericJSON-LD" data-include="owl/GOIoTPex.ttl#iiotex:genericJSON-LD"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-genericRDF" data-include="owl/GOIoTPex.ttl#iiotex:genericRDF"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-genericXML" data-include="owl/GOIoTPex.ttl#iiotex:genericXML"></section>
+		<section data-oninclude="extractOWLContentFromOntology" id="ttl-iiotex-iiotJSON" data-include="owl/GOIoTPex.ttl#iiotex:iiotJSON"></section>
+	</section>
+</section>
+
+<!-- <div data-include="owl/GOIoTP.ttl" data-include-replace=true><div> -->
+
+<!--
+<section data-dfn-for="Foo">
+    <h2><dfn>Foo</dfn> interface đź¦„ đź´</h2>
+
+	Linking to <a href='#introduction'></a>.
+
+	Linking to a figure: <a href="#img-mod-device"></a>
+
+    <pre class="idl">
+      interface Foo {
+        attribute Bar bar;
+        void doTheFoo();
+      };
+      </pre>
+    <p>The <a>Foo</a> interface is nice. Lets you do stuff.</p>
+    <p>The <dfn>bar</dfn> attribute, returns Ä‘ĹşĹ¤Ĺź.</p>
+    <p>The <dfn>doTheFoo()</dfn> method, returns nothing.</p>
+</section>
+-->
+
+<!--
+<section data-format="markdown">
+ ## This is level 2
+ This is a paragraph with some `code`.
+</section>
+-->
+
+<section>
+	<h2>Examples</h2>
+	<!--
+	<section>
+		<h2>First example</h2>
+		<aside class="example" title='Fat arrows (<code>=></code>)'>
+		  <p>Here we see how to use a fat arrow in ES.
+		  <pre>
+		  const sum = [...items]
+			.map(item => item * 2)
+			.reduce((sum, next) => sum + (next || 0) );
+		  </pre>
+		</aside>
+	</section>
+	-->
+	<!--
+	<section>
+		<h2>Non-highlighted example</h2>
+		<aside class="example" title='Fat arrows 2 (<code>=></code>)'>
+		  <p>Here we see how to use a fat arrow in ES.
+		  <pre class="nohighlight">
+		  const sum = [...items]
+			.map(item => item * 2)
+			.reduce((sum, next) => sum + (next || 0) );
+		  </pre>
+		</aside>
+	</section>
+	-->
+	<section>
+		<h2>Blood Pressure sensor</h2>
+		An instance of a blood pressure sensor - a small device managed by an instance of a BodyCloud platform, that measures systolic and diastolic blood pressure of a single patient.
+		<br/><a href="examples/TTL/Blood_pressure_sensor.ttl"><img src="img/formatTTL.svg" alt="Download example in TTL"></a>
+		<div class="example" title='Example JSON-LD message in INTER-IoT format'>
+		  <pre data-include="examples/TTL/Blood_pressure_sensor.ttl">
+
+		  </pre>
+		</div>
+	</section>
+	<section>
+		<h2>INTER-IoT JSON-LD</h2>
+		<aside class="example" title='Example JSON-LD message in INTER-IoT format'>
+		  <pre data-include="examples/device.json">
+
+		  </pre>
+		</aside>
+
+
+
+
+		<!--
+		<aside class="example" title='External example 2'>
+		  <p>Example TTL file.
+		  <pre data-include="examples/empire_state.ttl">
+
+		  </pre>
+		</aside>
+		-->
+	</section>
+</section>
+<section>
+	<h2>Appendices</h2>
+	
+	<section class="appendix" id="prefixes">
+		<h2>URI prefixes</h2>
+		<table data-oninclude="generatePrefixTable" id="ttl-iiotex-AbsorbedDoseRate" data-include="js/ontology_entities.json"></table>
+	</section>
+
+	<section id="diagram_key">
+		<h2>Ontology diagrams key</h2>
+		<figure id="img_key">
+		   <img src="img/key.png" alt="GOIoTP ontology diagram key">
+		   <figcaption>GOIoTP ontology diagram key.</figcaption>
+		</figure>
+	</section>
+
+	<section id="tof">
+	</section>
+</section>
+</body>
+</html>

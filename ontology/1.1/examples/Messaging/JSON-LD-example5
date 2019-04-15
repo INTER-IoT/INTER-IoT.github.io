@@ -1,0 +1,116 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "smart-knife": "http://purl.oclc.org/NET/ssnx/product/smart-knife#",
+    "ssn": "http://purl.oclc.org/NET/ssnx/ssn#",
+    "ucum": "http://purl.oclc.org/NET/muo/ucum/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "InterIoTMsg:metadata": {
+	  	"InterIoTMsg:convId": 3,
+	  	"InterIoTMsg:platform": {
+	  		"@id": "http://p1"
+	  	},
+	  	"InterIoTMsg:MessageType": "DEVICE_REGISTRATION"
+  },
+  "@graph": [
+    {
+      "@id": "smart-knife:Knife_123",
+      "@type": [
+        "ssn:FeatureOfInterest",
+        "ssn:Platform"
+      ],
+      "rdfs:comment": "An example knife with an attached WiTilt 3.0 accelerometer. It belongs to both ssn:Platform and ssn:Feature because it is both the platform of the sensor and the feature being observed by the sensor."
+    },
+    {
+      "@id": "smart-knife:WiTilt30MeasurementRange_1MaxValue",
+      "@type": [
+        "owl:Thing",
+        "smart-knife:AccelerationValue"
+      ],
+      "smart-knife:hasQuantityValue": {
+        "@type": "xsd:float",
+        "@value": "1.5"
+      }
+    },
+    {
+      "@id": "smart-knife:WiTilt30MeasurementRange_1",
+      "@type": [
+        "owl:Thing",
+        "smart-knife:WiTilt30MeasurementRange"
+      ],
+      "rdfs:comment": {
+        "@id": "smart-knife:Knife_123"
+      },
+      "smart-knife:hasMeasurementPropertyMaxValue": {
+        "@id": "smart-knife:WiTilt30MeasurementRange_1MaxValue"
+      },
+      "smart-knife:hasMeasurementPropertyMinValue": {
+        "@id": "smart-knife:WiTilt30MeasurementRange_1MinValue"
+      }
+    },
+    {
+      "@id": "smart-knife:WiTilt30MeasurementRange_1MinValue",
+      "@type": [
+        "smart-knife:AccelerationValue",
+        "owl:Thing"
+      ],
+      "smart-knife:hasQuantityValue": {
+        "@type": "xsd:float",
+        "@value": "-1.5"
+      }
+    },
+    {
+      "@id": "smart-knife:WiTilt30BinaryModeFrequencyValue",
+      "@type": [
+        "owl:Thing",
+        "smart-knife:FrequencyValue"
+      ],
+      "smart-knife:hasQuantityValue": {
+        "@type": "xsd:float",
+        "@value": "610.0"
+      }
+    },
+    {
+      "@id": "smart-knife:WiTilt30BinaryModeFrequency",
+      "@type": [
+        "smart-knife:WiTilt30MeasurementFrequency",
+        "owl:Thing"
+      ],
+      "smart-knife:hasMeasurementPropertyValue": {
+        "@id": "smart-knife:WiTilt30BinaryModeFrequencyValue"
+      }
+    },
+    {
+      "@id": "smart-knife:ExampleWiTilt30Accelerometer",
+      "@type": [
+        "owl:Thing",
+        "smart-knife:WiTilt30Accelerometer"
+      ],
+      "ssn:hasMeasurementCapability": {
+        "@id": "smart-knife:ExampleWiTiltAccelerometerMeasurementCapability"
+      },
+      "ssn:onPlatform": {
+        "@id": "smart-knife:Knife_123"
+      }
+    },
+    {
+      "@id": "smart-knife:ExampleWiTiltAccelerometerMeasurementCapability",
+      "@type": [
+        "smart-knife:WiTilt30AccelerationMeasurementCapability",
+        "owl:Thing"
+      ],
+      "rdfs:comment": "Measurement capabilities of our example sensor. It is set to the \"binary\" mode where the frequency is 610 Hz and measures acceleration in the range of +/- 1.5g.",
+      "ssn:hasMeasurementProperty": [
+        {
+          "@id": "smart-knife:WiTilt30BinaryModeFrequency"
+        },
+        {
+          "@id": "smart-knife:WiTilt30MeasurementRange_1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+  schema:description "The Empire State Building is a 102-story landmark in New York City."^^xsd:string ;
+  schema:geo [
+    schema:latitude "40.75"^^xsd:float ;
+    schema:longitude "73.98"^^xsd:float
+  ] ;
+  schema:image <http://www.civil.usherbrooke.ca/cours/gci215a/empire-state-building.jpg> ;
+  schema:name "The Empire State Building"^^xsd:string .

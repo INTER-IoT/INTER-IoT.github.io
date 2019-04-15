@@ -1,0 +1,52 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix iiot: <http://inter-iot.eu/GOIoTP#> .
+@prefix iiotex: <http://inter-iot.eu/GOIoTPex#> .
+@prefix sweet_units: <http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#> .
+
+#A generic namespace for an IoT platform that manages devices, has users, and offers services
+@prefix ex: <http://platform1.example.com/> .
+#A namespace for terms specific to healthcare domain
+@prefix medex: <http://medical.example.com/> .
+
+#An examle of a device (blood pressure meter) that in itself is a sensor, and can make observations
+<ex:device/blood_meter_1> a iiot:IoTDevice, sosa:Sensor ;
+	#iiot:hasName, and iiot:hasDescription are meant to be human readable
+	iiot:hasName "BodyCloud BC_1" ;
+  	iiot:hasDescription "BodyCloud blood pressure sensor, INTER-IoT pilot batch" ;
+
+  	#The label has a very similar function to iiot:hasName, but the latter is explicitly meant to be displayed in end-user applications.
+  	#If this function of iiothasName is already fulfilled by rdfs:label, INTER-IoT offers alignment mechanism to transform one into the other (see "INTER-IoT IPSM")
+	rdfs:label "BodyCloud Sensor BC_1"@en ;
+
+	#A local identifier, meaningful in context of BodyCloud platform. In any oher system, the entity URI should be used instead.
+  	iiotex:hasLocalID "BC_1" .
+
+#The device makes observations that have 2 results - systolic and diastolic blood pressure
+<ex:observation/333> a sosa:Observation ;
+
+  sosa:observedProperty <sensor/35-207306-844818-0/BMP282/atmosphericPressure> ;
+  sosa:hasFeatureOfInterest <earthAtmosphere> ;
+
+  sosa:madeBySensor <ex:device/blood_meter_1> ;
+  sosa:resultTime "2018-01-05T12:34:56Z"^^xsd:dateTime ;
+  #The two results are connected to a single observation
+  sosa:hasResult [
+  	iiot:hasResultValue "90"^^xsd:double;
+  	iiot:hasUnit <medex:mmHg> ;
+    rdf:type medex:SysstolicBloodPressure ;
+     ] ;
+  sosa:hasResult [
+  	iiot:hasResultValue "140"^^xsd:double;
+  	iiot:hasUnit <medex:mmHg> ;
+    rdf:type medex:DiastolicBloodPressure ;
+     ] ;
+   sosa:phenomenonTime [
+    rdf:type time:Instant ;
+    time:inXSDDateTimeStamp "2018-01-05T12:34:56Z"^^xsd:dateTimeStamp ] .
+
+#A medical unit of measurement is defined under the medical extension namespace
+<medex:mmHg> a sweet_units:Unit .

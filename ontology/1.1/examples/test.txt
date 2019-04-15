@@ -1,0 +1,21 @@
+###  http://inter-iot.eu/GOIoTP#hasDescription
+iiot:hasDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:comment "A human-readable description of an IoT entity."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasName
+iiot:hasName rdf:type owl:DatatypeProperty ;
+             rdfs:comment "A generic property describing a name of any entity in the context of IoT."@en .
+
+
+###  http://inter-iot.eu/GOIoTP#hasResultValue
+iiot:hasResultValue rdf:type owl:DatatypeProperty ;
+                    rdfs:domain sosa:Result .
+
+
+###  http://inter-iot.eu/GOIoTP#hasServiceDefinition
+iiot:hasServiceDefinition rdf:type owl:DatatypeProperty ;
+                          rdfs:domain iiot:Service ;
+                          rdfs:range xsd:anyURI ;
+                          rdfs:comment "Specifies an address  under which a technical and formal definition of a Service is accessible."@en ;
+                          <http://www.w3.org/2004/02/skos/core#example> "For webservices: a WSDL file, a WADL file, an OpenAPI specification file."@en .

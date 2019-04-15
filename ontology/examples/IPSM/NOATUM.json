@@ -1,0 +1,447 @@
+{
+  "@graph": [
+    {
+      "@graph": [
+        {
+          "@id": "InterIoTMsg:meta66b05c61-d687-45a3-b5fb-6864bbec3b69",
+          "@type": [
+            "InterIoTMsg:meta",
+            "InterIoTMsg:Platform_register"
+          ],
+          "InterIoTMsg:conversationID": "conv99528eba-eb2d-47e8-9ee6-9dd40d19f89a",
+          "InterIoTMsg:dateTimeStamp": "2017-05-22T22:19:30.281+02:00",
+          "InterIoTMsg:messageID": "msg7e484a2c-f959-486e-8da0-31143f457234"
+        }
+      ],
+      "@id": "InterIoTMsg:metadata"
+    },
+    {
+      "@graph": [
+        {
+          "@id": "_:b0",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#GpsSQ"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "2"
+          }
+        },
+        {
+          "@id": "_:b1",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva5"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "0"
+          }
+        },
+        {
+          "@id": "_:b10",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva8"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        },
+        {
+          "@id": "_:b11",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva11"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        },
+        {
+          "@id": "_:b12",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#GpsR"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:float",
+            "@value": "295.39"
+          }
+        },
+        {
+          "@id": "_:b13",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#PPos1"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        },
+        {
+          "@id": "_:b14",
+          "@type": "http://www.w3.org/2006/time#Instant",
+          "http://www.w3.org/2006/time#inPosition": {
+            "@id": "_:b33"
+          }
+        },
+        {
+          "@id": "_:b15",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva10"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        },
+        {
+          "@id": "_:b16",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva2"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "0"
+          }
+        },
+        {
+          "@id": "_:b17",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#GpsDU"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "4"
+          }
+        },
+        {
+          "@id": "_:b18",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Gps"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "8"
+          }
+        },
+        {
+          "@id": "_:b19",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva6"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "2"
+          }
+        },
+        {
+          "@id": "_:b2",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Off"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        },
+        {
+          "@id": "_:b20",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#GpsX"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:float",
+            "@value": "39.43178"
+          }
+        },
+        {
+          "@id": "_:b21",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Alarm"
+          ],
+          "InterIoT:GOIoTP#hasValue": true
+        },
+        {
+          "@id": "_:b22",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#On"
+          ],
+          "InterIoT:GOIoTP#hasValue": true
+        },
+        {
+          "@id": "_:b23",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#FRate"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "0"
+          }
+        },
+        {
+          "@id": "_:b24",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#WHours"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "50559"
+          }
+        },
+        {
+          "@id": "_:b25",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Nmov"
+          ],
+          "InterIoT:GOIoTP#hasValue": true
+        },
+        {
+          "@id": "_:b26",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Sensor",
+            "http://purl.oclc.org/NET/ssnx/ssn#Device",
+            "InterIoT:transport/NOATUM#Device"
+          ],
+          "InterIoT:GOIoTP#hasName": "TT0039",
+          "InterIoT:syntax/SEAMS2#hasId": {
+            "@type": "xsd:long",
+            "@value": "10"
+          }
+        },
+        {
+          "@id": "_:b27",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva9"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        },
+        {
+          "@id": "_:b28",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Dist"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "0"
+          }
+        },
+        {
+          "@id": "_:b29",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#PPos2"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        },
+        {
+          "@id": "_:b3",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#GpsV"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "0"
+          }
+        },
+        {
+          "@id": "_:b30",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#GpsY"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:float",
+            "@value": "-0.32709166"
+          }
+        },
+        {
+          "@id": "_:b31",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#GpsHDOP"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:float",
+            "@value": "1.0653533"
+          }
+        },
+        {
+          "@id": "_:b32",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#PlcOn"
+          ],
+          "InterIoT:GOIoTP#hasValue": true
+        },
+        {
+          "@id": "_:b33",
+          "@type": "http://www.w3.org/2006/time#TimePosition",
+          "http://www.w3.org/2006/time#nominalPosition": "06/09/2017 22:00:01"
+        },
+        {
+          "@id": "_:b4",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva4"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "0"
+          }
+        },
+        {
+          "@id": "_:b5",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva1"
+          ],
+          "InterIoT:GOIoTP#hasValue": {
+            "@type": "xsd:int",
+            "@value": "0"
+          }
+        },
+        {
+          "@id": "_:b6",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#DrOn"
+          ],
+          "InterIoT:GOIoTP#hasValue": true
+        },
+        {
+          "@id": "_:b7",
+          "InterIoT:syntax/SEAMS2#hasType": "null",
+          "InterIoT:syntax/SEAMS2#hasVersion": "1.0",
+          "http://www.w3.org/ns/sosa/hasResult": [
+            {
+              "@id": "_:b8"
+            },
+            {
+              "@id": "_:b9"
+            },
+            {
+              "@id": "_:b10"
+            },
+            {
+              "@id": "_:b1"
+            },
+            {
+              "@id": "_:b3"
+            },
+            {
+              "@id": "_:b4"
+            },
+            {
+              "@id": "_:b11"
+            },
+            {
+              "@id": "_:b12"
+            },
+            {
+              "@id": "_:b13"
+            },
+            {
+              "@id": "_:b0"
+            },
+            {
+              "@id": "_:b15"
+            },
+            {
+              "@id": "_:b16"
+            },
+            {
+              "@id": "_:b17"
+            },
+            {
+              "@id": "_:b18"
+            },
+            {
+              "@id": "_:b5"
+            },
+            {
+              "@id": "_:b19"
+            },
+            {
+              "@id": "_:b20"
+            },
+            {
+              "@id": "_:b21"
+            },
+            {
+              "@id": "_:b22"
+            },
+            {
+              "@id": "_:b23"
+            },
+            {
+              "@id": "_:b24"
+            },
+            {
+              "@id": "_:b25"
+            },
+            {
+              "@id": "_:b27"
+            },
+            {
+              "@id": "_:b28"
+            },
+            {
+              "@id": "_:b29"
+            },
+            {
+              "@id": "_:b30"
+            },
+            {
+              "@id": "_:b31"
+            },
+            {
+              "@id": "_:b2"
+            },
+            {
+              "@id": "_:b32"
+            },
+            {
+              "@id": "_:b6"
+            }
+          ],
+          "http://www.w3.org/ns/sosa/madeBySensor": {
+            "@id": "_:b26"
+          },
+          "http://www.w3.org/ns/sosa/phenomenonTime": {
+            "@id": "_:b14"
+          }
+        },
+        {
+          "@id": "_:b8",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva12"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        },
+        {
+          "@id": "_:b9",
+          "@type": [
+            "http://www.w3.org/ns/sosa/Result",
+            "InterIoT:transport/NOATUM#Reserva7"
+          ],
+          "InterIoT:GOIoTP#hasValue": false
+        }
+      ],
+      "@id": "InterIoTMsg:payload"
+    }
+  ],
+  "@context": {
+    "InterIoTMsg": "http://inter-iot.eu/message/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "InterIoT": "http://inter-iot.eu/"
+  }
+}
